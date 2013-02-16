@@ -1,0 +1,287 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		53673D7F16D038BC00C57FBA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53673D7E16D038BC00C57FBA /* UIKit.framework */; };
+		53673D8116D038BC00C57FBA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53673D8016D038BC00C57FBA /* Foundation.framework */; };
+		53673D8316D038BC00C57FBA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53673D8216D038BC00C57FBA /* CoreGraphics.framework */; };
+		53673D8916D038BC00C57FBA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53673D8716D038BC00C57FBA /* InfoPlist.strings */; };
+		53673D8B16D038BC00C57FBA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 53673D8A16D038BC00C57FBA /* main.m */; };
+		53673D8F16D038BC00C57FBA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53673D8E16D038BC00C57FBA /* AppDelegate.m */; };
+		53673D9116D038BC00C57FBA /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 53673D9016D038BC00C57FBA /* Default.png */; };
+		53673D9316D038BC00C57FBA /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53673D9216D038BC00C57FBA /* Default@2x.png */; };
+		53673D9516D038BC00C57FBA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53673D9416D038BC00C57FBA /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		53673D7B16D038BC00C57FBA /* HandyBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HandyBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		53673D7E16D038BC00C57FBA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		53673D8016D038BC00C57FBA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		53673D8216D038BC00C57FBA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		53673D8616D038BC00C57FBA /* HandyBook-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HandyBook-Info.plist"; sourceTree = "<group>"; };
+		53673D8816D038BC00C57FBA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		53673D8A16D038BC00C57FBA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		53673D8C16D038BC00C57FBA /* HandyBook-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HandyBook-Prefix.pch"; sourceTree = "<group>"; };
+		53673D8D16D038BC00C57FBA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		53673D8E16D038BC00C57FBA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		53673D9016D038BC00C57FBA /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		53673D9216D038BC00C57FBA /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		53673D9416D038BC00C57FBA /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		53673D7816D038BC00C57FBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53673D7F16D038BC00C57FBA /* UIKit.framework in Frameworks */,
+				53673D8116D038BC00C57FBA /* Foundation.framework in Frameworks */,
+				53673D8316D038BC00C57FBA /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		53673D7216D038BC00C57FBA = {
+			isa = PBXGroup;
+			children = (
+				53673D8416D038BC00C57FBA /* HandyBook */,
+				53673D7D16D038BC00C57FBA /* Frameworks */,
+				53673D7C16D038BC00C57FBA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		53673D7C16D038BC00C57FBA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				53673D7B16D038BC00C57FBA /* HandyBook.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		53673D7D16D038BC00C57FBA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53673D7E16D038BC00C57FBA /* UIKit.framework */,
+				53673D8016D038BC00C57FBA /* Foundation.framework */,
+				53673D8216D038BC00C57FBA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53673D8416D038BC00C57FBA /* HandyBook */ = {
+			isa = PBXGroup;
+			children = (
+				53673D8D16D038BC00C57FBA /* AppDelegate.h */,
+				53673D8E16D038BC00C57FBA /* AppDelegate.m */,
+				53673D8516D038BC00C57FBA /* Supporting Files */,
+			);
+			path = HandyBook;
+			sourceTree = "<group>";
+		};
+		53673D8516D038BC00C57FBA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				53673D8616D038BC00C57FBA /* HandyBook-Info.plist */,
+				53673D8716D038BC00C57FBA /* InfoPlist.strings */,
+				53673D8A16D038BC00C57FBA /* main.m */,
+				53673D8C16D038BC00C57FBA /* HandyBook-Prefix.pch */,
+				53673D9016D038BC00C57FBA /* Default.png */,
+				53673D9216D038BC00C57FBA /* Default@2x.png */,
+				53673D9416D038BC00C57FBA /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		53673D7A16D038BC00C57FBA /* HandyBook */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53673D9816D038BC00C57FBA /* Build configuration list for PBXNativeTarget "HandyBook" */;
+			buildPhases = (
+				53673D7716D038BC00C57FBA /* Sources */,
+				53673D7816D038BC00C57FBA /* Frameworks */,
+				53673D7916D038BC00C57FBA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HandyBook;
+			productName = HandyBook;
+			productReference = 53673D7B16D038BC00C57FBA /* HandyBook.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		53673D7316D038BC00C57FBA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Sema Belokovsky";
+			};
+			buildConfigurationList = 53673D7616D038BC00C57FBA /* Build configuration list for PBXProject "HandyBook" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 53673D7216D038BC00C57FBA;
+			productRefGroup = 53673D7C16D038BC00C57FBA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53673D7A16D038BC00C57FBA /* HandyBook */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		53673D7916D038BC00C57FBA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53673D8916D038BC00C57FBA /* InfoPlist.strings in Resources */,
+				53673D9116D038BC00C57FBA /* Default.png in Resources */,
+				53673D9316D038BC00C57FBA /* Default@2x.png in Resources */,
+				53673D9516D038BC00C57FBA /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		53673D7716D038BC00C57FBA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				53673D8B16D038BC00C57FBA /* main.m in Sources */,
+				53673D8F16D038BC00C57FBA /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		53673D8716D038BC00C57FBA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				53673D8816D038BC00C57FBA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		53673D9616D038BC00C57FBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		53673D9716D038BC00C57FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		53673D9916D038BC00C57FBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HandyBook/HandyBook-Prefix.pch";
+				INFOPLIST_FILE = "HandyBook/HandyBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		53673D9A16D038BC00C57FBA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HandyBook/HandyBook-Prefix.pch";
+				INFOPLIST_FILE = "HandyBook/HandyBook-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		53673D7616D038BC00C57FBA /* Build configuration list for PBXProject "HandyBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53673D9616D038BC00C57FBA /* Debug */,
+				53673D9716D038BC00C57FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53673D9816D038BC00C57FBA /* Build configuration list for PBXNativeTarget "HandyBook" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53673D9916D038BC00C57FBA /* Debug */,
+				53673D9A16D038BC00C57FBA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 53673D7316D038BC00C57FBA /* Project object */;
+}
