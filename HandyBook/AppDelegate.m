@@ -1,14 +1,18 @@
 //
 //  AppDelegate.m
-//  HandyBook
+//  gdzBooks
 //
 //  Created by Sema Belokovsky on 17.02.13.
 //  Copyright (c) 2013 Sema Belokovsky. All rights reserved.
 //
 
 #import "AppDelegate.h"
+#import "StartViewController.h"
+#import "MKiCloudSync.h"
 
 @implementation AppDelegate
+
+@synthesize viewController;
 
 - (void)dealloc
 {
@@ -18,8 +22,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+	#ifdef TESTING
+		[TestFlight takeOff:@"1cca6ab0a396183cd858dceab46133ad_MTg5NjMyMjAxMy0wMi0yMCAxNToyOTo1My41NDI0MDk"];
+		[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
+	#endif
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    // Override point for customization after application launch.
+	[MKiCloudSync start];
+	
+	self.viewController = [[StartViewController alloc] initWithNibName:nil bundle:nil];
+	self.window.rootViewController = self.viewController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

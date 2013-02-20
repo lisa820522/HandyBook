@@ -1,5 +1,5 @@
 //
-// Prefix header for all source files of the 'HandyBook' target in the 'HandyBook' project
+// Prefix header for all source files of the 'gdzBooks' target in the 'gdzBooks' project
 //
 
 #import <Availability.h>
@@ -11,4 +11,24 @@
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
+	#import "TestFlight.h"
 #endif
+
+#ifndef DEBUG
+	#define TESTING 1
+#endif
+
+#ifdef DEBUG
+#   define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+#else
+#   define DLog(...)
+#endif
+
+#define SERVERURL @"http://gdzios.ucoz.ru/"
+#define CATALOGUPDATED @"CatalogUpdated"
+
+#define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height
+#define ISRETINA ([[UIScreen mainScreen] respondsToSelector:@selector(displayLinkWithTarget:selector:)] && ([UIScreen mainScreen].scale == 2.0))
+#define IPADHEIGHT 1024
+#define IPHONEHEIGHT 480
+#define IPHONE5HEIGHT 568
