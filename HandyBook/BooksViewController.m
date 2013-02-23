@@ -52,6 +52,9 @@
 	[self setNavigationBar];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
+	
+	m_cacheProvider = [[ImageCacheProvider alloc] init];
+	m_cacheProvider.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -119,6 +122,8 @@
 	}
 	
 	[(BookCell *)cell setBook:[self.books objectAtIndex:[indexPath row]]];
+	UIImage *img = [m_cacheProvider imageForKey:[((BookCell *)cell).book objectForKey:@"file"]];
+	[((BookCell *)cell).thumbnailView setImage:img];
     
     return cell;
 }
@@ -214,6 +219,16 @@
 		UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Извините, файл не найден на сервере" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil];
 		[errorAlert show];
 	}
+}
+
+- (void)updateImage:(UIImage *)image forKey:(NSString *)key
+{
+	[self.tableView reloadData];
+}
+
+- (void)updateImage
+{
+//	[self.tableView reloadData];
 }
 
 #pragma mark - Purchasing

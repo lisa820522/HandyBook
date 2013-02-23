@@ -16,5 +16,6 @@
 }
 
 @property (nonatomic, retain) NSDictionary *book;
+@property (nonatomic, retain) UIImageView *thumbnailView;
 
 @end

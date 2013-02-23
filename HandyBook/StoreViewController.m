@@ -107,7 +107,7 @@ static StoreViewController *m_sharedInstance = nil;
 	UILabel *buttonLabel = [[UILabel alloc] initWithFrame:button.bounds];
 	buttonLabel.backgroundColor = [UIColor clearColor];
 	buttonLabel.textAlignment = UITextAlignmentCenter;
-	buttonLabel.textColor = [UIColor whiteColor];
+	buttonLabel.textColor = [UIColor blackColor];
 	buttonLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:20];
 	buttonLabel.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     buttonLabel.shadowOffset = CGSizeMake(0, -1.0);
@@ -376,7 +376,7 @@ static StoreViewController *m_sharedInstance = nil;
 {
 	label.backgroundColor = [UIColor clearColor];
 	label.textAlignment = left?UITextAlignmentLeft:UITextAlignmentRight;
-	label.textColor = [UIColor whiteColor];
+	label.textColor = [UIColor blackColor];
 	label.font = [UIFont fontWithName:@"StudioScriptCTT" size:25];
 	label.shadowColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     label.shadowOffset = CGSizeMake(0, -1.0);

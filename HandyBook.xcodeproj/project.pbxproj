@@ -18,7 +18,6 @@
 		53673D9516D038BC00C57FBA /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53673D9416D038BC00C57FBA /* Default-568h@2x.png */; };
 		5392AAD316D55FE30044408C /* SubjectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AA2716D55FE20044408C /* SubjectViewController.m */; };
 		5392AAD516D55FE30044408C /* StartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AA2B16D55FE20044408C /* StartViewController.m */; };
-		5392AAD616D55FE30044408C /* archive.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5392AA2E16D55FE20044408C /* archive.xml */; };
 		5392AAD716D55FE30044408C /* blackboard-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AA2F16D55FE20044408C /* blackboard-568h@2x.png */; };
 		5392AAD816D55FE30044408C /* blackboard-iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AA3016D55FE20044408C /* blackboard-iPad.png */; };
 		5392AAD916D55FE30044408C /* blackboard-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AA3116D55FE20044408C /* blackboard-iPad@2x.png */; };
@@ -173,6 +172,9 @@
 		5392AD5F16D963F50044408C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392AD5E16D963F50044408C /* StoreKit.framework */; };
 		5392AD6116D964130044408C /* GDZIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AD6016D964130044408C /* GDZIAPHelper.m */; };
 		5392AD6316D964250044408C /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AD6216D964250044408C /* IAPHelper.m */; };
+		5392AD6516D96F810044408C /* archive.xml in Resources */ = {isa = PBXBuildFile; fileRef = 5392AD6416D96F810044408C /* archive.xml */; };
+		5392AD6816D971620044408C /* ImageCacheProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AD6716D9715F0044408C /* ImageCacheProvider.m */; };
+		5392AD6A16D97D570044408C /* blank.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AD6916D97D570044408C /* blank.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,7 +195,6 @@
 		5392AA2816D55FE20044408C /* SubjectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SubjectViewController.h; path = HandyBook/SubjectViewController.h; sourceTree = "<group>"; };
 		5392AA2B16D55FE20044408C /* StartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StartViewController.m; path = HandyBook/StartViewController.m; sourceTree = "<group>"; };
 		5392AA2C16D55FE20044408C /* StartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StartViewController.h; path = HandyBook/StartViewController.h; sourceTree = "<group>"; };
-		5392AA2E16D55FE20044408C /* archive.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = archive.xml; sourceTree = "<group>"; };
 		5392AA2F16D55FE20044408C /* blackboard-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackboard-568h@2x.png"; sourceTree = "<group>"; };
 		5392AA3016D55FE20044408C /* blackboard-iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackboard-iPad.png"; sourceTree = "<group>"; };
 		5392AA3116D55FE20044408C /* blackboard-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blackboard-iPad@2x.png"; sourceTree = "<group>"; };
@@ -361,6 +362,10 @@
 		5392AD5E16D963F50044408C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5392AD6016D964130044408C /* GDZIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDZIAPHelper.m; path = HandyBook/GDZIAPHelper.m; sourceTree = SOURCE_ROOT; };
 		5392AD6216D964250044408C /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = HandyBook/IAPHelper.m; sourceTree = SOURCE_ROOT; };
+		5392AD6416D96F810044408C /* archive.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = archive.xml; sourceTree = "<group>"; };
+		5392AD6616D9715D0044408C /* ImageCacheProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageCacheProvider.h; path = HandyBook/ImageCacheProvider.h; sourceTree = "<group>"; };
+		5392AD6716D9715F0044408C /* ImageCacheProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageCacheProvider.m; path = HandyBook/ImageCacheProvider.m; sourceTree = "<group>"; };
+		5392AD6916D97D570044408C /* blank.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blank.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,9 +446,10 @@
 		5392AA2D16D55FE20044408C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5392AD6916D97D570044408C /* blank.png */,
+				5392AD6416D96F810044408C /* archive.xml */,
 				5392ABC816D95C4B0044408C /* refresh.png */,
 				5392ABC916D95C4C0044408C /* refresh@2x.png */,
-				5392AA2E16D55FE20044408C /* archive.xml */,
 				5392AA2F16D55FE20044408C /* blackboard-568h@2x.png */,
 				5392AA3016D55FE20044408C /* blackboard-iPad.png */,
 				5392AA3116D55FE20044408C /* blackboard-iPad@2x.png */,
@@ -649,6 +655,8 @@
 				5392AA2816D55FE20044408C /* SubjectViewController.h */,
 				5392AA2B16D55FE20044408C /* StartViewController.m */,
 				5392AA2C16D55FE20044408C /* StartViewController.h */,
+				5392AD6616D9715D0044408C /* ImageCacheProvider.h */,
+				5392AD6716D9715F0044408C /* ImageCacheProvider.m */,
 			);
 			name = Classes;
 			path = ..;
@@ -710,7 +718,6 @@
 				53673D9116D038BC00C57FBA /* Default.png in Resources */,
 				53673D9316D038BC00C57FBA /* Default@2x.png in Resources */,
 				53673D9516D038BC00C57FBA /* Default-568h@2x.png in Resources */,
-				5392AAD616D55FE30044408C /* archive.xml in Resources */,
 				5392AAD716D55FE30044408C /* blackboard-568h@2x.png in Resources */,
 				5392AAD816D55FE30044408C /* blackboard-iPad.png in Resources */,
 				5392AAD916D55FE30044408C /* blackboard-iPad@2x.png in Resources */,
@@ -848,6 +855,8 @@
 				5392AB6616D55FE30044408C /* InfoPlist.strings in Resources */,
 				5392ABCA16D95C4C0044408C /* refresh.png in Resources */,
 				5392ABCB16D95C4C0044408C /* refresh@2x.png in Resources */,
+				5392AD6516D96F810044408C /* archive.xml in Resources */,
+				5392AD6A16D97D570044408C /* blank.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -874,6 +883,7 @@
 				5392AD5D16D963E90044408C /* StoreViewController.m in Sources */,
 				5392AD6116D964130044408C /* GDZIAPHelper.m in Sources */,
 				5392AD6316D964250044408C /* IAPHelper.m in Sources */,
+				5392AD6816D971620044408C /* ImageCacheProvider.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

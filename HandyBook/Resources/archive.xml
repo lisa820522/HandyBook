@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive>
-	<version v="1">
-	<class id="5" name="5 Класс">
+	<version v="1"/>
+	<class id="5" name="5 класс">
 		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teaher's book" file="b050000"/>
+			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teaher's book" file="b150000"/>
 			<item id="1" name="ГДЗ по англ. яз." author="Кузовлев В.П." info="ГДЗ" file="b050001"/>
 		</subject>
 		<subject id="1" name="Математика">
@@ -22,7 +22,7 @@
 			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b050700"/>
 		</subject>
 	</class>
-	<class id="6" name="6 Класс">
+	<class id="6" name="6 класс">
 		<subject id="0" name="Английский язык">
 			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teaher's book" file="b060000"/>
 			<item id="1" name="ГДЗ Happy English" author="Кауфман К.И." info="ГДЗ" file="b060001"/>
@@ -44,7 +44,7 @@
 			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b060700"/>
 		</subject>
 	</class>
-	<class id="7" name="7 Класс">
+	<class id="7" name="7 класс">
 		<subject id="0" name="Английский язык">
 			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teachers Book" file="b070000"/>
 			<item id="1" name="ГДЗ к Enjoy English" author="Биболетова М.З." info="ГДЗ" file="b070001"/>
@@ -76,7 +76,7 @@
 			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b070700"/>
 		</subject>
 	</class>
-	<class id="8" name="8 Класс">
+	<class id="8" name="8 класс">
 		<subject id="0" name="Английский язык">
 			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teacher's Book" file="b080000"/>
 			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Teacher's Book" file="b080001"/>
@@ -113,7 +113,7 @@
 			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b080700"/>
 		</subject>
 	</class>
-	<class id="9" name="9 Класс">
+	<class id="9" name="9 класс">
 		<subject id="0" name="Английский язык">
 			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teacher's Book" file="b090000"/>
 			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Teacher's book" file="b090001"/>
@@ -147,7 +147,7 @@
 			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b090700"/>
 		</subject>
 	</class>
-	<class id="10" name="10 Класс">
+	<class id="10" name="10 класс">
 		<subject id="0" name="Английский язык">
 			<item id="0" name="Spotlight" author="Афанасьева О.В." info="Teacher's Book" file="b100000"/>
 			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Teacher's Book" file="b100001"/>
@@ -168,7 +168,7 @@
 		</subject>
 		<subject id="5" name="Физика">
 			<item id="0" name="Ответы и решения по физике" author="Касьянов В.А." info="Решебник" file="b100500"/>
-			<item id="1" name="ГДЗ по  физике" author="Рымкевич А.П." info="ГДЗ" file="b100501"/>
+			<item id="1" name="ГДЗ по физике" author="Рымкевич А.П." info="ГДЗ" file="b100501"/>
 			<item id="2" name="Решебник по физике" author="Мякишев Г.Я." info="Решебник" file="b100502"/>
 		</subject>
 		<subject id="6" name="Химия">
@@ -180,7 +180,7 @@
 			<item id="0" name="ГДЗ по нем. яз." author="Воронина Г.И." info="ГДЗ" file="b100700"/>
 		</subject>
 	</class>
-	<class id="11" name="11 Класс">
+	<class id="11" name="11 класс">
 		<subject id="0" name="Английский язык">
 			<item id="0" name="Spotlight" author="Афанасьева О.В." info="Контрольные задания" file="b110000"/>
 			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Theacher's book" file="b110001"/>
@@ -189,7 +189,7 @@
 		<subject id="2" name="Русский язык">
 			<item id="0" name="ГДЗ по рус. яз." author="Гольцов Н.Г." info="ГДЗ" file="b110200"/>
 			<item id="1" name="ГДЗ по рус. яз." author="Власенков А.И." info="ГДЗ" file="b110201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Греков В.Ф." info="ГДЗ" file="b100202"/>
+			<item id="2" name="ГДЗ по рус. яз." author="Греков В.Ф." info="ГДЗ" file="b110202"/>
 		</subject>
 		<subject id="3" name="Алгебра">
 			<item id="0" name="ГДЗ по алгебре и нач. анализа" author="Мордкович А.Г." info="Решебник" file="b110300"/>
@@ -211,5 +211,5 @@
 		<subject id="7" name="Немецкий язык">
 			<item id="0" name="ГДЗ по нем. яз." author="Воронина Г.И." info="ГДЗ" file="b110700"/>
 		</subject>
-	</class>	
+	</class>
 </archive>

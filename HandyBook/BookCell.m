@@ -11,6 +11,7 @@
 @implementation BookCell
 
 @synthesize book = m_book;
+@synthesize thumbnailView = m_thumbnailView;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -18,7 +19,7 @@
     if (self) {
         m_nameLabel = [[UILabel alloc] initWithFrame:CGRectZero];
 		m_nameLabel.backgroundColor = [UIColor clearColor];
-		m_nameLabel.textColor = [UIColor whiteColor];
+		m_nameLabel.textColor = [UIColor blackColor];
 		m_nameLabel.font = [UIFont fontWithName:@"StudioScriptCTT" size:25.0];
 		
 		self.selectionStyle = UITableViewCellSelectionStyleGray;
@@ -59,8 +60,8 @@
 	m_book = book;
 	m_nameLabel.text = [book objectForKey:@"name"];
 	m_authorLabel.text = [[book objectForKey:@"author"] stringByAppendingFormat:@", %@", [book objectForKey:@"info"]];
-	UIImage *img = [UIImage imageNamed:[[book objectForKey:@"file"] stringByAppendingString:@".jpg"]];
-	m_thumbnailView.image = img;
+//	UIImage *img = [UIImage imageNamed:[[book objectForKey:@"file"] stringByAppendingString:@".jpg"]];
+//	m_thumbnailView.image = img;
 }
 
 @end

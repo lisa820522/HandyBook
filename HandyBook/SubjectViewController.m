@@ -123,7 +123,7 @@
 	}
 	
 	cell.textLabel.text = [@"• " stringByAppendingString:[NameHelper nameForSubjectWithIndex:[[m_keys objectAtIndex:[indexPath row]] intValue]]];
-	cell.textLabel.textColor = [UIColor whiteColor];
+	cell.textLabel.textColor = [UIColor blackColor];
 	cell.textLabel.font = [UIFont fontWithName:@"StudioScriptCTT" size:25.0];
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;

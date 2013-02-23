@@ -17,7 +17,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateCatalog) name:CATALOGUPDATED object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startParse) name:CATALOGUPDATED object:nil];
 		m_inParsing = NO;
     }
     return self;
@@ -100,11 +100,11 @@
 	
 	NSURL *url = nil;
 	
-	if (fileExists) {
-		url = [NSURL fileURLWithPath:fileName];
-	} else {
+//	if (fileExists) {
+//		url = [NSURL fileURLWithPath:fileName];
+//	} else {
 		url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"archive.xml" ofType:nil]];
-	}
+//	}
 	
 	if (!m_inParsing) {
 		m_inParsing = YES;
@@ -135,11 +135,9 @@
 		NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 		NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"archive.xml"];
 		if (data.length > 10000) {
-			BOOL success = [data writeToFile:fileName atomically:YES];
-			if (success) {
-				[[NSNotificationCenter defaultCenter] postNotificationName:CATALOGUPDATED object:nil];
-			}
+			[data writeToFile:fileName atomically:YES];
 		}
+		[[NSNotificationCenter defaultCenter] postNotificationName:CATALOGUPDATED object:nil];
 	}
 }
 
@@ -196,7 +194,7 @@
 	if (m_keys) {
 		[m_keys release];
 	}
-	m_keys = [[[m_catalog allKeys] sortedArrayUsingSelector:@selector(compare:)] retain];
+	m_keys = [[m_catalog allKeys] retain];
 	[self performSelectorOnMainThread:@selector(catalogUpdated) withObject:nil waitUntilDone:YES];
 }
 
