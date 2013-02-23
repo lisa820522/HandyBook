@@ -167,6 +167,12 @@
 		5392AB6F16D5624A0044408C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392AB6E16D5624A0044408C /* libz.dylib */; };
 		5392AB7016D5625B0044408C /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392AB6C16D5622A0044408C /* libTestFlight.a */; };
 		5392AB7216D563D20044408C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392AB7116D563D20044408C /* MessageUI.framework */; };
+		5392ABCA16D95C4C0044408C /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392ABC816D95C4B0044408C /* refresh.png */; };
+		5392ABCB16D95C4C0044408C /* refresh@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392ABC916D95C4C0044408C /* refresh@2x.png */; };
+		5392AD5D16D963E90044408C /* StoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AD5C16D963E90044408C /* StoreViewController.m */; };
+		5392AD5F16D963F50044408C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392AD5E16D963F50044408C /* StoreKit.framework */; };
+		5392AD6116D964130044408C /* GDZIAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AD6016D964130044408C /* GDZIAPHelper.m */; };
+		5392AD6316D964250044408C /* IAPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5392AD6216D964250044408C /* IAPHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -346,6 +352,15 @@
 		5392AB6D16D5622A0044408C /* TestFlight.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		5392AB6E16D5624A0044408C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		5392AB7116D563D20044408C /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		5392ABA216D959980044408C /* GDZIAPHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDZIAPHelper.h; sourceTree = "<group>"; };
+		5392ABA416D959980044408C /* IAPHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IAPHelper.h; sourceTree = "<group>"; };
+		5392ABC816D95C4B0044408C /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
+		5392ABC916D95C4C0044408C /* refresh@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "refresh@2x.png"; sourceTree = "<group>"; };
+		5392AD5A16D963C40044408C /* StoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = StoreViewController.h; path = HandyBook/StoreViewController.h; sourceTree = "<group>"; };
+		5392AD5C16D963E90044408C /* StoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreViewController.m; path = HandyBook/StoreViewController.m; sourceTree = "<group>"; };
+		5392AD5E16D963F50044408C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		5392AD6016D964130044408C /* GDZIAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GDZIAPHelper.m; path = HandyBook/GDZIAPHelper.m; sourceTree = SOURCE_ROOT; };
+		5392AD6216D964250044408C /* IAPHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = IAPHelper.m; path = HandyBook/IAPHelper.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -353,6 +368,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5392AD5F16D963F50044408C /* StoreKit.framework in Frameworks */,
 				5392AB7216D563D20044408C /* MessageUI.framework in Frameworks */,
 				5392AB6F16D5624A0044408C /* libz.dylib in Frameworks */,
 				53673D7F16D038BC00C57FBA /* UIKit.framework in Frameworks */,
@@ -368,6 +384,7 @@
 		53673D7216D038BC00C57FBA = {
 			isa = PBXGroup;
 			children = (
+				5392AD5E16D963F50044408C /* StoreKit.framework */,
 				53673D8416D038BC00C57FBA /* HandyBook */,
 				5392AAC816D55FE30044408C /* en.lproj */,
 				53673D7D16D038BC00C57FBA /* Frameworks */,
@@ -424,6 +441,8 @@
 		5392AA2D16D55FE20044408C /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5392ABC816D95C4B0044408C /* refresh.png */,
+				5392ABC916D95C4C0044408C /* refresh@2x.png */,
 				5392AA2E16D55FE20044408C /* archive.xml */,
 				5392AA2F16D55FE20044408C /* blackboard-568h@2x.png */,
 				5392AA3016D55FE20044408C /* blackboard-iPad.png */,
@@ -574,6 +593,10 @@
 		5392AABE16D55FE30044408C /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				5392AD6216D964250044408C /* IAPHelper.m */,
+				5392AD6016D964130044408C /* GDZIAPHelper.m */,
+				5392ABA216D959980044408C /* GDZIAPHelper.h */,
+				5392ABA416D959980044408C /* IAPHelper.h */,
 				5392AB6E16D5624A0044408C /* libz.dylib */,
 				5392AB6C16D5622A0044408C /* libTestFlight.a */,
 				5392AB6D16D5622A0044408C /* TestFlight.h */,
@@ -604,6 +627,8 @@
 		5392AB6B16D55FEA0044408C /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				5392AD5C16D963E90044408C /* StoreViewController.m */,
+				5392AD5A16D963C40044408C /* StoreViewController.h */,
 				5392AACB16D55FE30044408C /* DownloadProgressView.m */,
 				5392AACC16D55FE30044408C /* DownloadProgressView.h */,
 				5392AACD16D55FE30044408C /* ClassViewController.m */,
@@ -680,6 +705,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5392AAE916D55FE30044408C /* StudioScriptCTT.ttf in Resources */,
 				53673D8916D038BC00C57FBA /* InfoPlist.strings in Resources */,
 				53673D9116D038BC00C57FBA /* Default.png in Resources */,
 				53673D9316D038BC00C57FBA /* Default@2x.png in Resources */,
@@ -703,7 +729,6 @@
 				5392AAE616D55FE30044408C /* startScreen-iPad@2x.png in Resources */,
 				5392AAE716D55FE30044408C /* startScreen.png in Resources */,
 				5392AAE816D55FE30044408C /* startScreen@2x.png in Resources */,
-				5392AAE916D55FE30044408C /* StudioScriptCTT.ttf in Resources */,
 				5392AAEA16D55FE30044408C /* b050000.jpg in Resources */,
 				5392AAEB16D55FE30044408C /* b050001.jpg in Resources */,
 				5392AAEC16D55FE30044408C /* b050100.jpg in Resources */,
@@ -821,6 +846,8 @@
 				5392AB5C16D55FE30044408C /* b110700.jpg in Resources */,
 				5392AB6216D55FE30044408C /* README.mdown in Resources */,
 				5392AB6616D55FE30044408C /* InfoPlist.strings in Resources */,
+				5392ABCA16D95C4C0044408C /* refresh.png in Resources */,
+				5392ABCB16D95C4C0044408C /* refresh@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -844,6 +871,9 @@
 				5392AB6816D55FE30044408C /* ClassViewController.m in Sources */,
 				5392AB6916D55FE30044408C /* BooksViewController.m in Sources */,
 				5392AB6A16D55FE30044408C /* BookCell.m in Sources */,
+				5392AD5D16D963E90044408C /* StoreViewController.m in Sources */,
+				5392AD6116D964130044408C /* GDZIAPHelper.m in Sources */,
+				5392AD6316D964250044408C /* IAPHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -928,6 +958,8 @@
 		53673D9916D038BC00C57FBA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/HandyBook/Libs\"",
@@ -939,6 +971,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/HandyBook/Libs\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -947,6 +980,8 @@
 		53673D9A16D038BC00C57FBA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -960,6 +995,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/HandyBook/Libs\"",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";

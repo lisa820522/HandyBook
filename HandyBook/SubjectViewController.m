@@ -85,7 +85,7 @@
     [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateHighlighted];
     button.adjustsImageWhenDisabled = NO;
 	
-    button.frame = CGRectMake(0, 0, 43, 26);
+    button.frame = CGRectMake(0, 7, 35, 30);
 	
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 	

@@ -22,10 +22,6 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-	#ifdef TESTING
-		[TestFlight takeOff:@"1cca6ab0a396183cd858dceab46133ad_MTg5NjMyMjAxMy0wMi0yMCAxNToyOTo1My41NDI0MDk"];
-		[TestFlight setDeviceIdentifier:[[UIDevice currentDevice] uniqueIdentifier]];
-	#endif
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 	[MKiCloudSync start];
 	

@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import "NameHelper.h"
 #import "PdfViewController.h"
+#import "StoreViewController.h"
 #import "PdfDownloader.h"
 #import "DownloadProgressView.h"
 #import "BookCell.h"
@@ -49,6 +50,8 @@
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
 	[self setNavigationBar];
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(productPurchased:) name:IAPHelperProductPurchasedNotification object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -78,7 +81,7 @@
     [button setImage:[UIImage imageNamed:imageName] forState:UIControlStateHighlighted];
     button.adjustsImageWhenDisabled = NO;
 	
-    button.frame = CGRectMake(0, 0, 43, 26);
+    button.frame = CGRectMake(0, 7, 35, 30);
 	
     [button addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -130,8 +133,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	m_bookID = [[self.books objectAtIndex:[indexPath row]] objectForKey:@"file"];
+	NSString *classComplect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:1] substringToIndex:2]];
 	[[PdfViewController sharedInstance] setName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
-	[self openReader:m_bookID];
+	
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:m_bookID] ||
+		[[NSUserDefaults standardUserDefaults] boolForKey:classComplect] ||
+		[[NSUserDefaults standardUserDefaults] boolForKey:@"c000000"]) {
+		[self openReader:m_bookID];
+	} else {
+		[[StoreViewController sharedInstance] setBookID:m_bookID];
+		NSString *info = [[[self.books objectAtIndex:[indexPath row]] objectForKey:@"author"] stringByAppendingString:@", "];
+		info = [info stringByAppendingString:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"info"]];
+		[[StoreViewController sharedInstance] setInfo:info];
+		[[StoreViewController sharedInstance] setBookName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
+		[self presentModalViewController:[StoreViewController sharedInstance] animated:YES];
+	}
 }
 
 - (void)openReader:(NSString *)key
@@ -198,6 +214,23 @@
 		UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:@"Ошибка" message:@"Извините, файл не найден на сервере" delegate:self cancelButtonTitle:@"ОК" otherButtonTitles:nil];
 		[errorAlert show];
 	}
+}
+
+#pragma mark - Purchasing
+
+- (void)productPurchased:(NSNotification *)notification
+{
+    NSString *productIdentifier = notification.object;
+	NSString *classComplect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:1] substringToIndex:2]];
+    if ([productIdentifier isEqualToString:@"com.xatax.gdzBooks.book"]) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:m_bookID];
+	} else if ([productIdentifier isEqualToString:@"com.xatax.gdzBooks.klass"]) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:classComplect];
+	} else if ([productIdentifier isEqualToString:@"com.xatax.gdzBooks.all"]) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"c000000"];
+	}
+	[[StoreViewController sharedInstance] dismissModalViewControllerAnimated:YES];
+	[self openReader:m_bookID];
 }
 
 @end

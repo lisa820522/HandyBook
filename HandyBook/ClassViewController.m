@@ -23,6 +23,14 @@
     return self;
 }
 
+- (void)dealloc
+{
+	[m_activityView release];
+	[m_keys release];
+	[m_lockView release];
+	[super dealloc];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,24 +52,39 @@
 	self.tableView.backgroundView = view;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
+	m_lockView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	[self.navigationController.navigationBar addSubview:m_lockView];
+	m_activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 44) / 2, (self.view.frame.size.height - 44) / 2, 44, 44)];
+	m_activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+	[m_lockView addSubview:m_activityView];
+	m_lockView.hidden = YES;
+	
 	[self setNavigationBar];
 	
-	[self startParse];
+	[self performSelectorInBackground:@selector(updateCatalog) withObject:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	((MainViewController *)self.navigationController).titleLabel.text = @"ГДЗ";
+	((MainViewController *)self.navigationController).titleLabel.text = @"Катлог";
 }
 
 - (void)setNavigationBar
 {
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeInfoDark];
+	NSString *imageName = @"refresh";
+	if (ISRETINA) {
+		imageName = [imageName stringByAppendingString:@"@2x"];
+	}
+	imageName = [imageName stringByAppendingString:@".png"];
 	
-    button.frame = CGRectMake(0, 0, 43, 26);
+    UIImage *buttonImage = [UIImage imageNamed:imageName];
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+    [button setImage:buttonImage forState:UIControlStateNormal];
 	
-    [button addTarget:self action:@selector(help) forControlEvents:UIControlEventTouchUpInside];
+    button.frame = CGRectMake(0, 7, 35, 30);
+	
+    [button addTarget:self action:@selector(updateCatalog) forControlEvents:UIControlEventTouchUpInside];
 	
     UIBarButtonItem *customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
     self.navigationItem.rightBarButtonItem = customBarItem;
@@ -69,57 +92,10 @@
     [customBarItem release];
 }
 
-- (void)help
-{
-	if ([MFMailComposeViewController canSendMail]) {
-		MFMailComposeViewController *ctl = [[MFMailComposeViewController alloc] init];
-		ctl.mailComposeDelegate = self;
-		NSArray *toRecipients = [NSArray arrayWithObject:@"igrampe@gmail.com"];
-        [ctl setToRecipients:toRecipients];
-		[ctl setSubject:@"Обратная связь | ГДЗ"];
-		[self presentModalViewController:ctl animated:YES];
-		[ctl release];
-	} else {
-		[self showErrorMessage];
-	}
-}
-
-- (void)mailComposeController:(MFMailComposeViewController*)controller
-          didFinishWithResult:(MFMailComposeResult)result
-                        error:(NSError*)error {
-    
-    [self dismissModalViewControllerAnimated:YES];
-	if (result == MFMailComposeResultSent) {
-		
-	}
-}
-
-- (void)showSuccessMessage
-{
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Спасибо!"
-                                                    message:@"Мы постараемся ответить Вам в ближайшее время"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-}
-
-- (void)showErrorMessage
-{    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Почтовый аккаунт не настроен"
-                                                    message:@"Пожалуйста, настройте почтовый аккаунт"
-                                                   delegate:nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
-    [alert release];
-}
-
 - (void)startParse
 {
 	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-	NSString *fileName = [documentsDirectory stringByAppendingString:@"/archive.xml"];
+	NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"archive.xml"];
 	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:fileName];
 	
 	NSURL *url = nil;
@@ -151,27 +127,33 @@
 
 - (void)updateCatalog
 {
-	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-	NSString *fileName = [documentsDirectory stringByAppendingString:@"/archive.xml"];
-	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:fileName];
-	
-	if (fileExists && !m_inParsing) {
-		m_inParsing = YES;
-		NSURL *url = [NSURL fileURLWithPath:fileName];
-		NSData *fileData = [NSData dataWithContentsOfURL:url];
-		NSXMLParser *parser = [[NSXMLParser alloc] initWithData:fileData];
-		[parser setDelegate:self];
-		[parser setShouldProcessNamespaces:NO];
-		[parser setShouldReportNamespacePrefixes:NO];
-		[parser setShouldResolveExternalEntities:NO];
+	if (m_lockView.hidden) {
+		[self performSelectorOnMainThread:@selector(showActivity) withObject:nil waitUntilDone:YES];
 		
-		[parser parse];
-		
-		if ([parser parserError]) {
-			DLog(@"error\n%@\n",[parser parserError]);
+		NSURL *url = [NSURL URLWithString:[SERVERURL stringByAppendingString:@"archive.xml"]];
+		NSData *data = [NSData dataWithContentsOfURL:url];
+		NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+		NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"archive.xml"];
+		if (data.length > 10000) {
+			BOOL success = [data writeToFile:fileName atomically:YES];
+			if (success) {
+				[[NSNotificationCenter defaultCenter] postNotificationName:CATALOGUPDATED object:nil];
+			}
 		}
-		[parser release];
 	}
+}
+
+- (void)catalogUpdated
+{
+	m_lockView.hidden = YES;
+	[m_activityView stopAnimating];
+	[self.tableView reloadData];
+}
+
+- (void)showActivity
+{
+	[m_activityView startAnimating];
+	m_lockView.hidden = NO;
 }
 
 #pragma mark - NSXMLParserDelegate
@@ -185,14 +167,14 @@
 		m_catalog = [[NSMutableDictionary alloc] init];
 	} else if ([elementName isEqualToString:@"class"]) {
 		NSMutableDictionary *class = [NSMutableDictionary dictionary];
-		m_currentClassID = [attributeDict objectForKey:@"id"];
-		[m_catalog setObject:class forKey:m_currentClassID];
+		m_currentClass = [attributeDict objectForKey:@"name"];
+		[m_catalog setObject:class forKey:m_currentClass];
 	} else if ([elementName isEqualToString:@"subject"]) {
 		NSMutableArray *subject = [NSMutableArray array];
 		m_currentSubjectID = [attributeDict objectForKey:@"id"];
-		[[m_catalog objectForKey:m_currentClassID] setObject:subject forKey:m_currentSubjectID];
+		[[m_catalog objectForKey:m_currentClass] setObject:subject forKey:m_currentSubjectID];
 	} else if ([elementName isEqualToString:@"item"]) {
-		[[[m_catalog objectForKey:m_currentClassID] objectForKey:m_currentSubjectID] addObject:[attributeDict retain]];
+		[[[m_catalog objectForKey:m_currentClass] objectForKey:m_currentSubjectID] addObject:[attributeDict retain]];
 	}
 }
 
@@ -211,8 +193,12 @@
 - (void)parserDidEndDocument:(NSXMLParser *)parser
 {
 	m_inParsing = NO;
+	if (m_keys) {
+		[m_keys release];
+	}
+	m_keys = [[[m_catalog allKeys] sortedArrayUsingSelector:@selector(compare:)] retain];
+	[self performSelectorOnMainThread:@selector(catalogUpdated) withObject:nil waitUntilDone:YES];
 }
-
 
 #pragma mark - Table view data source
 
@@ -223,7 +209,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
+    return [m_keys count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -235,8 +221,8 @@
 		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
 	}
 	
-	cell.textLabel.text = [NSString stringWithFormat:@"• %d класс",[indexPath row]+5];
-	cell.textLabel.textColor = [UIColor whiteColor];
+	cell.textLabel.text = [NSString stringWithFormat:@"• %@",[m_keys objectAtIndex:[indexPath row]]];
+	cell.textLabel.textColor = [UIColor blackColor];
 	cell.textLabel.font = [UIFont fontWithName:@"StudioScriptCTT" size:25.0];
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
@@ -254,7 +240,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SubjectViewController *ctl = [[SubjectViewController alloc] initWithStyle:UITableViewStylePlain];
-	ctl.subjects = [m_catalog objectForKey:[NSString stringWithFormat:@"%d",([indexPath row] + 5)]];
+	ctl.subjects = [m_catalog objectForKey:[m_keys objectAtIndex:[indexPath row]]];
 	ctl.index = [indexPath row] + 5;
 	[self.navigationController pushViewController:ctl animated:YES];
 	[ctl release];

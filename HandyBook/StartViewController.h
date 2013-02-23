@@ -10,7 +10,7 @@
 
 @class MainViewController;
 
-@interface StartViewController : UIViewController <NSXMLParserDelegate> {
+@interface StartViewController : UIViewController {
 	UIImageView *m_imageView;
 	NSTimer *m_timer;
 	MainViewController *m_mainVC;

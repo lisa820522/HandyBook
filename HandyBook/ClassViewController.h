@@ -11,9 +11,12 @@
 
 @interface ClassViewController : UITableViewController <NSXMLParserDelegate, MFMailComposeViewControllerDelegate> {
 	NSMutableDictionary *m_catalog;
-	NSString *m_currentClassID;
+	NSString *m_currentClass;
 	NSString *m_currentSubjectID;
 	BOOL m_inParsing;
+	UIView *m_lockView;
+	UIActivityIndicatorView *m_activityView;
+	NSArray *m_keys;
 }
 
 @end
