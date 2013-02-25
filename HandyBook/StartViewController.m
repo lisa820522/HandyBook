@@ -7,7 +7,7 @@
 //
 
 #import "StartViewController.h"
-#import "ClassViewController.h"
+#import "SubjectViewController.h"
 #import "MainViewController.h"
 
 @interface StartViewController ()
@@ -42,7 +42,7 @@
 	imageView.frame = self.view.bounds;
 	[self.view addSubview:imageView];
 
-	ClassViewController *classVC = [[ClassViewController alloc] initWithStyle:UITableViewStylePlain];
+	SubjectViewController *classVC = [[SubjectViewController alloc] initWithStyle:UITableViewStylePlain];
 	m_mainVC = [[MainViewController alloc] initWithRootViewController:classVC];
 	
 	m_timer = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(push) userInfo:nil repeats:NO];

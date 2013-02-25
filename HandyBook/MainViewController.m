@@ -25,7 +25,7 @@
 	imageName = [imageName stringByAppendingString:@".png"];
 	
 	UIImage *image = [UIImage imageNamed:imageName];
-	image = [UIImage imageWithCGImage:[image CGImage] scale:2 orientation:UIImageOrientationUp];
+	image = [UIImage imageWithCGImage:[image CGImage] scale:1 orientation:UIImageOrientationUp];
 	[self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
 	
 	self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 200)/ 2, 0, 200, 44)];

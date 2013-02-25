@@ -138,11 +138,11 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	m_bookID = [[self.books objectAtIndex:[indexPath row]] objectForKey:@"file"];
-	NSString *classComplect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:1] substringToIndex:2]];
+	NSString *complect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:3] substringToIndex:2]];
 	[[PdfViewController sharedInstance] setName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:m_bookID] ||
-		[[NSUserDefaults standardUserDefaults] boolForKey:classComplect] ||
+		[[NSUserDefaults standardUserDefaults] boolForKey:complect] ||
 		[[NSUserDefaults standardUserDefaults] boolForKey:@"c000000"]) {
 		[self openReader:m_bookID];
 	} else {
@@ -236,12 +236,12 @@
 - (void)productPurchased:(NSNotification *)notification
 {
     NSString *productIdentifier = notification.object;
-	NSString *classComplect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:1] substringToIndex:2]];
-    if ([productIdentifier isEqualToString:@"com.xatax.gdzBooks.book"]) {
+	NSString *complect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:3] substringToIndex:2]];
+    if ([productIdentifier isEqualToString:@"com.grampe.HandyBook.book"]) {
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:m_bookID];
-	} else if ([productIdentifier isEqualToString:@"com.xatax.gdzBooks.klass"]) {
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:classComplect];
-	} else if ([productIdentifier isEqualToString:@"com.xatax.gdzBooks.all"]) {
+	} else if ([productIdentifier isEqualToString:@"com.grampe.HandyBook.complect"]) {
+		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:complect];
+	} else if ([productIdentifier isEqualToString:@"com.grampe.HandyBook.all"]) {
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"c000000"];
 	}
 	[[StoreViewController sharedInstance] dismissModalViewControllerAnimated:YES];

@@ -84,7 +84,7 @@ static StoreViewController *m_sharedInstance = nil;
 	backgroundColor = [[UIColor alloc] initWithPatternImage:[UIImage imageNamed:imageName]];
 	self.view.backgroundColor = backgroundColor;
 	
-	imageName = @"navBar";
+	imageName = @"toolbar";
 	if (SCREENHEIGHT == 1024) {
 		imageName = [imageName stringByAppendingString:@"-iPad"];
 	}
@@ -94,7 +94,7 @@ static StoreViewController *m_sharedInstance = nil;
 	imageName = [imageName stringByAppendingString:@".png"];
 	
 	UIImage *image = [UIImage imageNamed:imageName];
-	image = [UIImage imageWithCGImage:[image CGImage] scale:2 orientation:UIImageOrientationUp];
+	image = [UIImage imageWithCGImage:[image CGImage] scale:2 orientation:UIImageOrientationDown];
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
 	[imageView setFrame:CGRectMake(0, self.view.frame.size.height - 44, self.view.frame.size.width, 44)];
 	[self.view addSubview:imageView];
@@ -165,7 +165,7 @@ static StoreViewController *m_sharedInstance = nil;
 	button = [UIButton buttonWithType:UIButtonTypeCustom];
 	button.backgroundColor = [[UIColor yellowColor] colorWithAlphaComponent:0.05];
 	button.frame = CGRectMake(0, 40 + BUTTONHEIGHT + MARGIN, self.view.frame.size.width, BUTTONHEIGHT);
-	[button addTarget:self action:@selector(buyClass) forControlEvents:UIControlEventTouchUpInside];
+	[button addTarget:self action:@selector(buyComplect) forControlEvents:UIControlEventTouchUpInside];
 	
 	buttonLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, 0,
 															button.frame.size.width - PRICEWIDTH - 2*MARGIN - isIpad*50, LABELHEIGHT)];
@@ -275,7 +275,7 @@ static StoreViewController *m_sharedInstance = nil;
 	attributes:(NSDictionary *)attributeDict
 {
 	if ([elementName isEqualToString:@"app"]) {
-		if ([[attributeDict objectForKey:@"id"] isEqualToString:@"com.xatax.gdzBooks"]) {
+		if ([[attributeDict objectForKey:@"id"] isEqualToString:@"com.grampe.HandyBook"]) {
 			if ([[attributeDict objectForKey:@"status"] isEqualToString:@"1"]) {
 				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Paid"];
 			}
@@ -312,18 +312,18 @@ static StoreViewController *m_sharedInstance = nil;
 	if (m_activityView.hidden) {
 		m_activityView.hidden = NO;
 		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.xatax.gdzBooks.book"];
+		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.book"];
 		DLog(@"Buying %@...", product.productIdentifier);
 		[[GDZIAPHelper sharedInstance] buyProduct:product];
 	}
 }
 
-- (void)buyClass
+- (void)buyComplect
 {
 	if (m_activityView.hidden) {
 		m_activityView.hidden = NO;
 		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.xatax.gdzBooks.klass"];
+		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.complect"];
 		DLog(@"Buying %@...", product.productIdentifier);
 		[[GDZIAPHelper sharedInstance] buyProduct:product];
 	}	
@@ -334,7 +334,7 @@ static StoreViewController *m_sharedInstance = nil;
 	if (m_activityView.hidden) {
 		m_activityView.hidden = NO;
 		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.xatax.gdzBooks.all"];
+		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.all"];
 		DLog(@"Buying %@...", product.productIdentifier);
 		[[GDZIAPHelper sharedInstance] buyProduct:product];
 	}
@@ -357,13 +357,13 @@ static StoreViewController *m_sharedInstance = nil;
     [[GDZIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             m_products = [products retain];
-			SKProduct *product = [self productWithIdentifier:@"com.xatax.gdzBooks.book"];
+			SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.book"];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_bookPrice.text = [m_priceFormatter stringFromNumber:product.price];
-			product = [self productWithIdentifier:@"com.xatax.gdzBooks.klass"];
+			product = [self productWithIdentifier:@"com.grampe.HandyBook.complect"];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_classPrice.text = [m_priceFormatter stringFromNumber:product.price];
-			product = [self productWithIdentifier:@"com.xatax.gdzBooks.all"];
+			product = [self productWithIdentifier:@"com.grampe.HandyBook.all"];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_allPrice.text = [m_priceFormatter stringFromNumber:product.price];
         }

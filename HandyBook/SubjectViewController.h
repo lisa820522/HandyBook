@@ -1,5 +1,5 @@
 //
-//  SubjectViewController.h
+//  ClassViewController.h
 //  gdzBooks
 //
 //  Created by Sema Belokovsky on 17.02.13.
@@ -7,12 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SubjectViewController : UITableViewController {
+@interface SubjectViewController : UITableViewController <NSXMLParserDelegate> {
+	NSMutableDictionary *m_catalog;
+	NSString *m_currentCategory;
+	NSString *m_currentSubject;
+	BOOL m_inParsing;
+	UIView *m_lockView;
+	UIActivityIndicatorView *m_activityView;
 	NSArray *m_keys;
 }
-
-@property (nonatomic, assign) int index;
-@property (nonatomic, assign) NSDictionary *subjects;
 
 @end

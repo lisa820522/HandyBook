@@ -1,215 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <archive>
 	<version v="1"/>
-	<class id="5" name="5 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teaher's book" file="b150000"/>
-			<item id="1" name="ГДЗ по англ. яз." author="Кузовлев В.П." info="ГДЗ" file="b050001"/>
-		</subject>
-		<subject id="1" name="Математика">
-			<item id="0" name="ГДЗ по математике." author="Виленкин, Жохов" info="ГДЗ" file="b050100"/>
-			<item id="1" name="ГДЗ по математике" author="Зубарева, Мордкович" info="ГДЗ" file="b050101"/>
-			<item id="2" name="ГДЗ по математике" author="Дорофеева, Петерсон" info="ГДЗ" file="b050102"/>
-			<item id="3" name="ГДЗ по математике" author="Никольский С.М" info="ГДЗ" file="b050103"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Ладыженская Т.А." info="ГДЗ" file="b050200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Разумовская М.М." info="ГДЗ" file="b050201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Львова С.И." info="ГДЗ" file="b050202"/>
-			<item id="3" name="ГДЗ по рус. яз." author="Купалова А.Ю." info="ГДЗ" file="b050203"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b050700"/>
-		</subject>
-	</class>
-	<class id="6" name="6 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teaher's book" file="b060000"/>
-			<item id="1" name="ГДЗ Happy English" author="Кауфман К.И." info="ГДЗ" file="b060001"/>
-			<item id="2" name="ГДЗ по англ. яз." author="Кузовлева В.П" info="ГЛЗ" file="b060002"/>
-			<item id="3" name="ГДЗ по англ. яз." author="Афанасьева О.В." info="ГДЗ" file="b060003"/>
-			<item id="4" name="ГДЗ по англ. яз." author="Биболетова М.З." info="ГДЗ" file="b060004"/>
-		</subject>
-		<subject id="1" name="Математика">
-			<item id="0" name="ГДЗ по математике" author="Мордкович А.Г." info="ГДЗ" file="b060100"/>
-			<item id="1" name="ГДЗ по математике" author="Виленкин Н.Я." info="ГДЗ" file="b060101"/>
-			<item id="2" name="ГДЗ к дидактическим материалам" author="Чесноков А.С." info="ГДЗ" file="b060102"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Разумовская М.М." info="ГДЗ" file="b060200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Баранов М.Т." info="ГДЗ" file="b060201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Лидман-Орлова Г.К." info="ГДЗ" file="b060202"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b060700"/>
-		</subject>
-	</class>
-	<class id="7" name="7 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teachers Book" file="b070000"/>
-			<item id="1" name="ГДЗ к Enjoy English" author="Биболетова М.З." info="ГДЗ" file="b070001"/>
-			<item id="2" name="ГДЗ к Happy English." author="Кауфман К.И." info="ГДЗ" file="b070002"/>
-			<item id="3" name="Дом. раб. по англ. яз." author="Афанасьева О.В." info="ГДЗ" file="b070003"/>
-			<item id="4" name="Дом. раб. по англ. яз." author="Кузовлев В.П." info="ГДЗ" file="b070004"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Пименова С.Н." info="ГДЗ" file="b070200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Разумовская М.М." info="ГДЗ" file="b070201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Баранов М.Т." info="ГДЗ" file="b070202"/>
-		</subject>
-		<subject id="3" name="Алгебра">
-			<item id="0" name="ГДЗ по алгебре" author="Мордковича А.Г." info="ГДЗ" file="b070300"/>
-			<item id="1" name="Дом. раб. по алгебре" author="Макарычева Ю.Н." info="ГДЗ" file="b070301"/>
-		</subject>
-		<subject id="4" name="Геометрия">
-			<item id="0" name="Дом. раб. по геометрии" author="Погорелова" info="ГДЗ" file="b070400"/>
-			<item id="1" name="Дом. раб. по геометрим." author="Атанасян" info="ГДЗ" file="b070401"/>
-		</subject>
-		<subject id="5" name="Физика">
-			<item id="0" name="Дом. раб. по физике" author="Громов" info="ГДЗ" file="b070500"/>
-			<item id="1" name="Дом. раб. по физике" author="Перышкин А.В." info="Пособие" file="b070501"/>
-			<item id="2" name="Дом. раб. по физике" author="Перышкин А.В." info="Пособие" file="b070502"/>
-			<item id="3" name="Ответы и решения по физике" author="Лукашик В.И." info="ГДЗ" file="b070503"/>
-			<item id="4" name="Дом. раб. по физике" author="Перышкин А.В." info="Решебник" file="b070504"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b070700"/>
-		</subject>
-	</class>
-	<class id="8" name="8 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teacher's Book" file="b080000"/>
-			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Teacher's Book" file="b080001"/>
-			<item id="2" name="Дом. раб. для Happy English" author="Кауфман К.И." info="ГДЗ" file="b080002"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Тростенцова" info="ГДЗ" file="b080200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Бархударов С.Г." info="ГДЗ" file="b080201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Разумовская М.М." info="Решебник+" file="b080202"/>
-			<item id="3" name="ГДЗ по рус. яз." author="Пичугов Ю.С." info="ГДЗ" file="b080203"/>
-		</subject>
-		<subject id="3" name="Алгебра">
-			<item id="0" name="Дом. раб. по алгебре" author="Никольский С.М." info="Решебник" file="b080300"/>
-			<item id="1" name="Дом. раб. по алгебре" author="Мордкович А.Г." info="Решебник" file="b080301"/>
-			<item id="2" name="Дом. раб. по алгебре" author="Алимов А.Ш." info="Решебник+" file="b080302"/>
-			<item id="3" name="Дом. раб. по алгебре" author="Макарычев Ю.Н." info="Решебник" file="b080303"/>
-		</subject>
-		<subject id="4" name="Геометрия">
-			<item id="0" name="Дом. раб. по геометрии" author="Погорелов А.В." info="Пособие" file="b080400"/>
-			<item id="0" name="Дом. раб. по геометрии" author="Атанасян Л.С." info="Решебник" file="b080401"/>
-		</subject>
-		<subject id="5" name="Физика">
-			<item id="0" name="Дом. раб. по физике" author="Перышкин А.В." info="Решебник" file="b080500"/>
-			<item id="1" name="Дом. раб. по физике" author="Громов С.В." info="Пособие" file="b080501"/>
-			<item id="2" name="Дом. раб. по физике" author="Лукашик В.И." info="ГДЗ" file="b080502"/>
-			<item id="3" name="ГДЗ по физике" author="Перышкин А.В" info="ГДЗ" file="b080503"/>
-		</subject>
-		<subject id="6" name="Химия">
-			<item id="0" name="Дом. раб. по химии" author="Габриелян О.С" info="ГДЗ" file="b080600"/>
-			<item id="1" name="ГДЗ по химии" author="Рудзитиса Г.Е" info="ГДЗ" file="b080601"/>
-			<item id="3" name="ГДЗ по химии" author="Гузей Л.С." info="ГДЗ" file="b080602"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b080700"/>
-		</subject>
-	</class>
-	<class id="9" name="9 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Ваулина Ю.Е." info="Teacher's Book" file="b090000"/>
-			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Teacher's book" file="b090001"/>
-			<item id="2" name="ГДЗ к Happy English" author="Кауфман К.И." info="" file="b090002"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Бархударов С.Г." info="ГДЗ" file="b090200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Тростенцов" info="ГДЗ" file="b090201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Разумовская М.М." info="ГДЗ" file="b090202"/>
-		</subject>
-		<subject id="3" name="Алгебра">
-			<item id="0" name="ГДЗ по алгебре" author="Мордкович А.Г." info="ГДЗ" file="b090300"/>
-			<item id="1" name="ГДЗ по алгебре" author="Алимов А.Ш." info="ГДЗ" file="b090301"/>
-			<item id="2" name="ГДЗ по алгебре" author="Макарычев" info="ГДЗ" file="b090302"/>
-		</subject>
-		<subject id="4" name="Геометрия">
-			<item id="0" name="ГДЗ по геометрии" author="Погорелов" info="ГДЗ" file="b090400"/>
-			<item id="1" name="Дом. раб. по геометрии" author="Атанасян" info="Решебник" file="b090401"/>
-		</subject>
-		<subject id="5" name="Физика">
-			<item id="0" name="ГДЗ по физике" author="Лукашик В.И." info="ГДЗ" file="b090500"/>
-			<item id="1" name="Дом. раб. по физике" author="Перышкин А.В" info="Решебник+" file="b090501"/>
-			<item id="2" name="ГДЗ по физике" author="Перышкин А.В" info="ГДЗ" file="b090502"/>
-		</subject>
-		<subject id="6" name="Химия">
-			<item id="0" name="ГДЗ по химии" author="Рудзитис Г.Е." info="ГДЗ" file="b090600"/>
-			<item id="1" name="ГДЗ по химии" author="Габриелян О.С" info="Решебник" file="b090601"/>
-			<item id="3" name="ГДЗ по химии" author="Гузей Л.С." info="ГДЗ" file="b090602"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз. Schritte" author="Бим И.Л." info="ГДЗ" file="b090700"/>
-		</subject>
-	</class>
-	<class id="10" name="10 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Афанасьева О.В." info="Teacher's Book" file="b100000"/>
-			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Teacher's Book" file="b100001"/>
-			<item id="2" name="ГДЗ к Happy English" author="Кауфман К.И" info="ГДЗ" file="b100002"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Гольцова Н.Г." info="ГДЗ" file="b100200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Власенков А.И." info="ГДЗ" file="b100201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Греков В.Ф." info="ГДЗ" file="b100202"/>
-		</subject>
-		<subject id="3" name="Алгебра">
-			<item id="0" name="ГДЗ по алгебре и нач. анализа" author="Алимов А.Ш." info="ГДЗ" file="b100300"/>
-			<item id="1" name="ГДЗ по алгебре и нач. анализа" author="Мордкович А.Г." info="ГДЗ" file="b100301"/>
-		</subject>
-		<subject id="4" name="Геометрия">
-			<item id="0" name="ГДЗ по геометрии" author="Погорелов" info="ГДЗ" file="b100400"/>
-			<item id="1" name="ГДЗ по геометрии" author="Атанасян Л.С." info="ГДЗ" file="b100401"/>
-		</subject>
-		<subject id="5" name="Физика">
-			<item id="0" name="Ответы и решения по физике" author="Касьянов В.А." info="Решебник" file="b100500"/>
-			<item id="1" name="ГДЗ по физике" author="Рымкевич А.П." info="ГДЗ" file="b100501"/>
-			<item id="2" name="Решебник по физике" author="Мякишев Г.Я." info="Решебник" file="b100502"/>
-		</subject>
-		<subject id="6" name="Химия">
-			<item id="0" name="ГДЗ по химии" author="Габриелян О.С." info="Решебник" file="b100600"/>
-			<item id="1" name="ГДЗ по химии" author="Гузей Л.С." info="ГДЗ" file="b100601"/>
-			<item id="3" name="ГДЗ по химии" author="Рудзитис Г.Е." info="ГДЗ" file="b100602"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз." author="Воронина Г.И." info="ГДЗ" file="b100700"/>
-		</subject>
-	</class>
-	<class id="11" name="11 класс">
-		<subject id="0" name="Английский язык">
-			<item id="0" name="Spotlight" author="Афанасьева О.В." info="Контрольные задания" file="b110000"/>
-			<item id="1" name="Enjoy English" author="Биболетова М.З." info="Theacher's book" file="b110001"/>
-			<item id="2" name="ГДЗ по англ. яз." author="Кузовлев В.П." info="ГДЗ" file="b110002"/>
-		</subject>
-		<subject id="2" name="Русский язык">
-			<item id="0" name="ГДЗ по рус. яз." author="Гольцов Н.Г." info="ГДЗ" file="b110200"/>
-			<item id="1" name="ГДЗ по рус. яз." author="Власенков А.И." info="ГДЗ" file="b110201"/>
-			<item id="2" name="ГДЗ по рус. яз." author="Греков В.Ф." info="ГДЗ" file="b110202"/>
-		</subject>
-		<subject id="3" name="Алгебра">
-			<item id="0" name="ГДЗ по алгебре и нач. анализа" author="Мордкович А.Г." info="Решебник" file="b110300"/>
-			<item id="1" name="ГДЗ по алгебре и нач. анализа" author="Алимов А.Ш." info="ГДЗ" file="b110301"/>
-		</subject>
-		<subject id="4" name="Геометрия">
-			<item id="0" name="ГДЗ по геометрии" author="Атанасян Л.С." info="ГДЗ" file="b110400"/>
-			<item id="1" name="Дом. раб. по геометрии" author="Погорелов А.В." info="Решебник" file="b110401"/>
-		</subject>
-		<subject id="5" name="Физика">
-			<item id="0" name="ГДЗ по физике" author="Рымкевич А.П." info="ГДЗ" file="b110500"/>
-			<item id="1" name="Ответы и решения по физике" author="Касьянов В.А." info="" file="b110501"/>
-			<item id="2" name="Решебник по физике" author="Парфентьева Н.А." info="Решебник" file="b110502"/>
-		</subject>
-		<subject id="6" name="Химия">
-			<item id="0" name="Решебник по химии" author="Габриелян О.С." info="Решебник+" file="b110600"/>
-			<item id="1" name="ГДЗ по химии" author="Рудзитис Г.Е." info="Пособие" file="b110601"/>
-		</subject>
-		<subject id="7" name="Немецкий язык">
-			<item id="0" name="ГДЗ по нем. яз." author="Воронина Г.И." info="ГДЗ" file="b110700"/>
-		</subject>
-	</class>
+	<subject id="0" name="Английский язык">
+		<category id="0" name="Самоучители">
+			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000000"/>
+			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000001"/>
+		</category>
+		<category id="1" name="Фонетика">
+			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>
+			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000101"/>
+		</category>
+	</subject>
+	<subject id="1" name="Французский язык">
+		<category id="0" name="Самоучители">
+			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b010000"/>
+			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b010001"/>
+		</category>
+		<category id="1" name="Фонетика">
+			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b010100"/>
+			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b010101"/>
+		</category>
+	</subject>
 </archive>
