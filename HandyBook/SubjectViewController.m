@@ -52,10 +52,11 @@
 	self.tableView.backgroundView = view;
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
-	m_lockView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+	m_lockView = [[UIView alloc] initWithFrame:self.view.bounds];
+	m_lockView.backgroundColor = [UIColor blackColor];
 	[self.navigationController.navigationBar addSubview:m_lockView];
 	m_activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 44) / 2, (self.view.frame.size.height - 44) / 2, 44, 44)];
-	m_activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleWhite;
+	m_activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
 	[m_lockView addSubview:m_activityView];
 	m_lockView.hidden = YES;
 	

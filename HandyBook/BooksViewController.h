@@ -20,6 +20,6 @@
 }
 
 @property (nonatomic, retain) NSArray *books;
-@property (nonatomic, assign) int index;
+@property (nonatomic, retain) NSString *category;
 
 @end

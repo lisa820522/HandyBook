@@ -60,7 +60,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-	((MainViewController *)self.navigationController).titleLabel.text = [NameHelper nameForSubjectWithIndex:self.index];
+	((MainViewController *)self.navigationController).titleLabel.text = self.category;
 }
 
 - (void)setNavigationBar
@@ -151,6 +151,7 @@
 		info = [info stringByAppendingString:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"info"]];
 		[[StoreViewController sharedInstance] setInfo:info];
 		[[StoreViewController sharedInstance] setBookName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
+		[[StoreViewController sharedInstance] setComplect:self.category];
 		[self presentModalViewController:[StoreViewController sharedInstance] animated:YES];
 	}
 }

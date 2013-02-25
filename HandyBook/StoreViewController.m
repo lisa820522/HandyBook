@@ -23,6 +23,7 @@
 @synthesize bookID;
 @synthesize info;
 @synthesize bookName;
+@synthesize complect;
 
 static StoreViewController *m_sharedInstance = nil;
 
@@ -43,11 +44,10 @@ static StoreViewController *m_sharedInstance = nil;
 {
 	[m_bookLabel release];
 	[m_infoLabel release];
-	[m_classLabel release];
+	[m_complectLabel release];
 	[m_bookPrice release];
-	[m_classPrice release];
+	[m_complectPrice release];
 	[m_allPrice release];
-	[m_classID release];
 	[m_priceFormatter release];
 	[m_products release];
 	[m_activityView release];
@@ -123,7 +123,7 @@ static StoreViewController *m_sharedInstance = nil;
 	// Book button
 	
 	button = [UIButton buttonWithType:UIButtonTypeCustom];
-	button.backgroundColor = [[UIColor greenColor] colorWithAlphaComponent:0.05];
+	button.backgroundColor = [UIColor clearColor];
 	button.frame = CGRectMake(0, 40, self.view.frame.size.width, BUTTONHEIGHT);
 	[button addTarget:self action:@selector(buyBook) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -160,41 +160,41 @@ static StoreViewController *m_sharedInstance = nil;
 	[button addSubview:m_bookPrice];
 	[self.view addSubview:button];
 	
-	// Class button
+	// Complect button
 	
 	button = [UIButton buttonWithType:UIButtonTypeCustom];
-	button.backgroundColor = [[UIColor yellowColor] colorWithAlphaComponent:0.05];
+	button.backgroundColor = [UIColor clearColor];
 	button.frame = CGRectMake(0, 40 + BUTTONHEIGHT + MARGIN, self.view.frame.size.width, BUTTONHEIGHT);
 	[button addTarget:self action:@selector(buyComplect) forControlEvents:UIControlEventTouchUpInside];
 	
 	buttonLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, 0,
 															button.frame.size.width - PRICEWIDTH - 2*MARGIN - isIpad*50, LABELHEIGHT)];
 	[self configureLabel:buttonLabel left:YES];
-	buttonLabel.text = @"Все книги";
+	buttonLabel.text = @"Комплект";
 	[button addSubview:buttonLabel];
 	
-	m_classLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, LABELHEIGHT,
+	m_complectLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, LABELHEIGHT,
 															button.frame.size.width - PRICEWIDTH - 2*MARGIN - isIpad*50, LABELHEIGHT)];
-	[self configureLabel:m_classLabel left:YES];
-	m_classLabel.text = @"за 6 класс";
-	[button addSubview:m_classLabel];
+	[self configureLabel:m_complectLabel left:YES];
+	m_complectLabel.text = @"Фонетика";
+	[button addSubview:m_complectLabel];
 	
-	m_classPrice = [[UILabel alloc] initWithFrame:CGRectMake(button.frame.size.width - PRICEWIDTH - MARGIN - isIpad*50, LABELHEIGHT, PRICEWIDTH + isIpad*50, LABELHEIGHT)];
-	[self configureLabel:m_classPrice left:NO];
+	m_complectPrice = [[UILabel alloc] initWithFrame:CGRectMake(button.frame.size.width - PRICEWIDTH - MARGIN - isIpad*50, LABELHEIGHT, PRICEWIDTH + isIpad*50, LABELHEIGHT)];
+	[self configureLabel:m_complectPrice left:NO];
 	if (SCREENHEIGHT == IPADHEIGHT) {
-		m_classPrice.font = [UIFont fontWithName:@"StudioScriptCTT" size:25];
+		m_complectPrice.font = [UIFont fontWithName:@"StudioScriptCTT" size:25];
 	} else {
-		m_classPrice.font = [UIFont fontWithName:@"StudioScriptCTT" size:20];
+		m_complectPrice.font = [UIFont fontWithName:@"StudioScriptCTT" size:20];
 	}
-	m_classPrice.textColor = [UIColor colorWithRed:255/255.0 green:235/255.0 blue:41/255.0 alpha:1];
-	m_classPrice.text = @"";
-	[button addSubview:m_classPrice];
+	m_complectPrice.textColor = [UIColor colorWithRed:255/255.0 green:235/255.0 blue:41/255.0 alpha:1];
+	m_complectPrice.text = @"";
+	[button addSubview:m_complectPrice];
 	[self.view addSubview:button];
 	
 	// All books button
 	
 	button = [UIButton buttonWithType:UIButtonTypeCustom];
-	button.backgroundColor = [[UIColor redColor] colorWithAlphaComponent:0.05];
+	button.backgroundColor = [UIColor clearColor];
 	button.frame = CGRectMake(0, 236, self.view.frame.size.width, 88);
 	[button addTarget:self action:@selector(buyAll) forControlEvents:UIControlEventTouchUpInside];
 	
@@ -234,11 +234,7 @@ static StoreViewController *m_sharedInstance = nil;
 	
 	m_bookLabel.text = self.bookName;
 	m_infoLabel.text = self.info;
-	m_classID = [[self.bookID substringFromIndex:1] substringToIndex:2];
-	if ([m_classID intValue] < 10) {
-		m_classID = [m_classID substringFromIndex:1];
-	}
-	m_classLabel.text = [[@"за " stringByAppendingString:m_classID] stringByAppendingString:@" класс"];
+	m_complectLabel.text = self.complect;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -343,7 +339,7 @@ static StoreViewController *m_sharedInstance = nil;
 - (void)reload
 {
 	if (!m_activityView) {
-		m_activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+		m_activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
 		m_activityView.frame = CGRectMake(self.view.center.x - 30, self.view.center.y - 30, 60, 60);
 		[self.view addSubview:m_activityView];
 	}
@@ -362,7 +358,7 @@ static StoreViewController *m_sharedInstance = nil;
 			m_bookPrice.text = [m_priceFormatter stringFromNumber:product.price];
 			product = [self productWithIdentifier:@"com.grampe.HandyBook.complect"];
 			[m_priceFormatter setLocale:product.priceLocale];
-			m_classPrice.text = [m_priceFormatter stringFromNumber:product.price];
+			m_complectPrice.text = [m_priceFormatter stringFromNumber:product.price];
 			product = [self productWithIdentifier:@"com.grampe.HandyBook.all"];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_allPrice.text = [m_priceFormatter stringFromNumber:product.price];

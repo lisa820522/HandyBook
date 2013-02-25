@@ -144,7 +144,7 @@
 {
     BooksViewController *ctl = [[BooksViewController alloc] initWithStyle:UITableViewStylePlain];
 	ctl.books = [self.categories objectForKey:[m_keys objectAtIndex:[indexPath row]]];
-	ctl.index = [[m_keys objectAtIndex:[indexPath row]] intValue];
+	ctl.category = [m_keys objectAtIndex:[indexPath row]];
 	[self.navigationController pushViewController:ctl animated:YES];
 	[ctl release];
 }
