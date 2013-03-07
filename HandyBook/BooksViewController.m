@@ -136,14 +136,15 @@
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
+{	
 	m_bookID = [[self.books objectAtIndex:[indexPath row]] objectForKey:@"file"];
-	NSString *complect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:3] substringToIndex:2]];
+	NSString *classComplect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:1] substringToIndex:2]];
+	classComplect = [classComplect stringByAppendingString:@"0000"];
 	[[PdfViewController sharedInstance] setName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:m_bookID] ||
-		[[NSUserDefaults standardUserDefaults] boolForKey:complect] ||
-		[[NSUserDefaults standardUserDefaults] boolForKey:@"c000000"]) {
+		[[NSUserDefaults standardUserDefaults] boolForKey:classComplect] ||
+		[[NSUserDefaults standardUserDefaults] boolForKey:@"cXXXXXX"]) {
 		[self openReader:m_bookID];
 	} else {
 		[[StoreViewController sharedInstance] setBookID:m_bookID];
@@ -151,7 +152,6 @@
 		info = [info stringByAppendingString:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"info"]];
 		[[StoreViewController sharedInstance] setInfo:info];
 		[[StoreViewController sharedInstance] setBookName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
-		[[StoreViewController sharedInstance] setComplect:self.category];
 		[self presentModalViewController:[StoreViewController sharedInstance] animated:YES];
 	}
 }
@@ -214,6 +214,7 @@
 	// Hack against fake data
 	if ([data length] > 10000) {
 		[data writeToFile:fileName atomically:YES];
+		[self addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:fileName]];
 		[[PdfDownloader sharedInstance] freeMemory];
 		[self openReader:m_bookID];
 	} else {
@@ -229,22 +230,28 @@
 
 - (void)updateImage
 {
-//	[self.tableView reloadData];
+	[self.tableView reloadData];
+}
+
+- (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL
+{
+    assert([[NSFileManager defaultManager] fileExistsAtPath: [URL path]]);
+	
+    NSError *error = nil;
+    BOOL success = [URL setResourceValue: [NSNumber numberWithBool: YES]
+                                  forKey: NSURLIsExcludedFromBackupKey error: &error];
+    if(!success){
+        NSLog(@"Error excluding %@ from backup %@", [URL lastPathComponent], error);
+    }
+    return success;
 }
 
 #pragma mark - Purchasing
 
 - (void)productPurchased:(NSNotification *)notification
 {
-    NSString *productIdentifier = notification.object;
-	NSString *complect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:3] substringToIndex:2]];
-    if ([productIdentifier isEqualToString:@"com.grampe.HandyBook.book"]) {
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:m_bookID];
-	} else if ([productIdentifier isEqualToString:@"com.grampe.HandyBook.complect"]) {
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:complect];
-	} else if ([productIdentifier isEqualToString:@"com.grampe.HandyBook.all"]) {
-		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"c000000"];
-	}
+	NSString *productIdentifier = notification.object;
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:productIdentifier];
 	[[StoreViewController sharedInstance] dismissModalViewControllerAnimated:YES];
 	[self openReader:m_bookID];
 }

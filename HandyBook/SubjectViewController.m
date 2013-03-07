@@ -19,6 +19,7 @@
     if (self) {
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startParse) name:CATALOGUPDATED object:nil];
 		m_inParsing = NO;
+		m_isAlreadyUpdated = NO;
     }
     return self;
 }
@@ -53,7 +54,7 @@
 	self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 	
 	m_lockView = [[UIView alloc] initWithFrame:self.view.bounds];
-	m_lockView.backgroundColor = [UIColor blackColor];
+	m_lockView.backgroundColor = [UIColor clearColor];
 	[self.navigationController.navigationBar addSubview:m_lockView];
 	m_activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 44) / 2, (self.view.frame.size.height - 44) / 2, 44, 44)];
 	m_activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -69,6 +70,11 @@
 {
 	[super viewWillAppear:animated];
 	((MainViewController *)self.navigationController).titleLabel.text = @"Каталог";
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
 }
 
 - (void)setNavigationBar
@@ -91,6 +97,31 @@
     self.navigationItem.rightBarButtonItem = customBarItem;
 	
     [customBarItem release];
+	
+	button = [UIButton buttonWithType:UIButtonTypeCustom];
+	
+    button.frame = CGRectMake(0, 0, 100, 26);
+	
+    [button addTarget:self action:@selector(restore) forControlEvents:UIControlEventTouchUpInside];
+	
+	UILabel *label = [[UILabel alloc] initWithFrame:button.bounds];
+	label.text = @"Restore";
+	label.font = [UIFont fontWithName:@"Helvetica-Bold" size:17];
+	label.textColor = [UIColor whiteColor];
+	label.backgroundColor = [UIColor clearColor];
+	[button addSubview:label];
+	
+    customBarItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+    self.navigationItem.leftBarButtonItem = customBarItem;
+	
+    [customBarItem release];
+}
+
+- (void)restore
+{
+	NSMutableSet *set = [[NSMutableSet alloc] initWithObjects:@"com.xatax.gdzBooks.allBooks", nil];
+	IAPHelper *helper = [[IAPHelper alloc] initWithProductIdentifiers:set];
+	[helper restoreCompletedTransactions];
 }
 
 - (void)startParse
@@ -101,11 +132,11 @@
 	
 	NSURL *url = nil;
 	
-//	if (fileExists) {
-//		url = [NSURL fileURLWithPath:fileName];
-//	} else {
+	if (fileExists) {
+		url = [NSURL fileURLWithPath:fileName];
+	} else {
 		url = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"archive.xml" ofType:nil]];
-//	}
+	}
 	
 	if (!m_inParsing) {
 		m_inParsing = YES;
@@ -147,6 +178,7 @@
 	m_lockView.hidden = YES;
 	[m_activityView stopAnimating];
 	[self.tableView reloadData];
+	m_isAlreadyUpdated = YES;
 }
 
 - (void)showActivity

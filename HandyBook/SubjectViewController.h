@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "IAPHelper.h"
 
 @interface SubjectViewController : UITableViewController <NSXMLParserDelegate> {
 	NSMutableDictionary *m_catalog;
@@ -17,6 +18,7 @@
 	UIView *m_lockView;
 	UIActivityIndicatorView *m_activityView;
 	NSArray *m_keys;
+	BOOL m_isAlreadyUpdated;
 }
 
 @end

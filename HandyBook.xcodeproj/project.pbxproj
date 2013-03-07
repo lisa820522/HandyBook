@@ -185,6 +185,8 @@
 		5392AD7C16DB5E920044408C /* toolBar-iPad@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AD7816DB5E900044408C /* toolBar-iPad@2x.png */; };
 		5392AD7D16DB5E920044408C /* toolBar.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AD7916DB5E910044408C /* toolBar.png */; };
 		5392AD7E16DB5E920044408C /* toolBar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5392AD7A16DB5E910044408C /* toolBar@2x.png */; };
+		53B5628716E8B35600F91C37 /* b000000.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53B5628516E8B35600F91C37 /* b000000.jpg */; };
+		53B5628816E8B35600F91C37 /* b000001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 53B5628616E8B35600F91C37 /* b000001.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -386,6 +388,9 @@
 		5392AD7816DB5E900044408C /* toolBar-iPad@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolBar-iPad@2x.png"; sourceTree = "<group>"; };
 		5392AD7916DB5E910044408C /* toolBar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolBar.png; sourceTree = "<group>"; };
 		5392AD7A16DB5E910044408C /* toolBar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolBar@2x.png"; sourceTree = "<group>"; };
+		53B5628516E8B35600F91C37 /* b000000.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b000000.jpg; sourceTree = "<group>"; };
+		53B5628616E8B35600F91C37 /* b000001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = b000001.jpg; sourceTree = "<group>"; };
+		53B5628916E8C96100F91C37 /* HandyBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = HandyBook.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +450,7 @@
 		53673D8416D038BC00C57FBA /* HandyBook */ = {
 			isa = PBXGroup;
 			children = (
+				53B5628916E8C96100F91C37 /* HandyBook.entitlements */,
 				5392AA2D16D55FE20044408C /* Resources */,
 				5392AABE16D55FE30044408C /* Libs */,
 				5392AB6B16D55FEA0044408C /* Classes */,
@@ -507,6 +513,8 @@
 		5392AA4216D55FE20044408C /* thmbs */ = {
 			isa = PBXGroup;
 			children = (
+				53B5628516E8B35600F91C37 /* b000000.jpg */,
+				53B5628616E8B35600F91C37 /* b000001.jpg */,
 				5392AA4316D55FE20044408C /* b050000.jpg */,
 				5392AA4416D55FE20044408C /* b050001.jpg */,
 				5392AA4516D55FE20044408C /* b050100.jpg */,
@@ -897,6 +905,8 @@
 				5392AD7C16DB5E920044408C /* toolBar-iPad@2x.png in Resources */,
 				5392AD7D16DB5E920044408C /* toolBar.png in Resources */,
 				5392AD7E16DB5E920044408C /* toolBar@2x.png in Resources */,
+				53B5628716E8B35600F91C37 /* b000000.jpg in Resources */,
+				53B5628816E8B35600F91C37 /* b000001.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1010,6 +1020,8 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HandyBook/HandyBook.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/HandyBook/Libs\"",
@@ -1023,6 +1035,7 @@
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1032,6 +1045,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = NO;
 				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = YES;
+				CODE_SIGN_ENTITLEMENTS = HandyBook/HandyBook.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (

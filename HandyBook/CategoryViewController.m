@@ -55,11 +55,6 @@
 	[self setNavigationBar];
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-	[super viewWillAppear:animated];
-}
-
 - (void)setNavigationBar
 {
 	NSString *imageName = @"buttonBack";

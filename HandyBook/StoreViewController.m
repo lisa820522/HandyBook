@@ -23,7 +23,6 @@
 @synthesize bookID;
 @synthesize info;
 @synthesize bookName;
-@synthesize complect;
 
 static StoreViewController *m_sharedInstance = nil;
 
@@ -36,7 +35,6 @@ static StoreViewController *m_sharedInstance = nil;
 			m_sharedInstance = [NSAllocateObject([self class], 0, NULL) initWithNibName:nil bundle:nil];
         }
     }
-	
     return m_sharedInstance;
 }
 
@@ -44,9 +42,7 @@ static StoreViewController *m_sharedInstance = nil;
 {
 	[m_bookLabel release];
 	[m_infoLabel release];
-	[m_complectLabel release];
 	[m_bookPrice release];
-	[m_complectPrice release];
 	[m_allPrice release];
 	[m_priceFormatter release];
 	[m_products release];
@@ -160,42 +156,11 @@ static StoreViewController *m_sharedInstance = nil;
 	[button addSubview:m_bookPrice];
 	[self.view addSubview:button];
 	
-	// Complect button
-	
-	button = [UIButton buttonWithType:UIButtonTypeCustom];
-	button.backgroundColor = [UIColor clearColor];
-	button.frame = CGRectMake(0, 40 + BUTTONHEIGHT + MARGIN, self.view.frame.size.width, BUTTONHEIGHT);
-	[button addTarget:self action:@selector(buyComplect) forControlEvents:UIControlEventTouchUpInside];
-	
-	buttonLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, 0,
-															button.frame.size.width - PRICEWIDTH - 2*MARGIN - isIpad*50, LABELHEIGHT)];
-	[self configureLabel:buttonLabel left:YES];
-	buttonLabel.text = @"Комплект";
-	[button addSubview:buttonLabel];
-	
-	m_complectLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, LABELHEIGHT,
-															button.frame.size.width - PRICEWIDTH - 2*MARGIN - isIpad*50, LABELHEIGHT)];
-	[self configureLabel:m_complectLabel left:YES];
-	m_complectLabel.text = @"Фонетика";
-	[button addSubview:m_complectLabel];
-	
-	m_complectPrice = [[UILabel alloc] initWithFrame:CGRectMake(button.frame.size.width - PRICEWIDTH - MARGIN - isIpad*50, LABELHEIGHT, PRICEWIDTH + isIpad*50, LABELHEIGHT)];
-	[self configureLabel:m_complectPrice left:NO];
-	if (SCREENHEIGHT == IPADHEIGHT) {
-		m_complectPrice.font = [UIFont fontWithName:@"StudioScriptCTT" size:25];
-	} else {
-		m_complectPrice.font = [UIFont fontWithName:@"StudioScriptCTT" size:20];
-	}
-	m_complectPrice.textColor = [UIColor colorWithRed:255/255.0 green:235/255.0 blue:41/255.0 alpha:1];
-	m_complectPrice.text = @"";
-	[button addSubview:m_complectPrice];
-	[self.view addSubview:button];
-	
 	// All books button
 	
 	button = [UIButton buttonWithType:UIButtonTypeCustom];
 	button.backgroundColor = [UIColor clearColor];
-	button.frame = CGRectMake(0, 236, self.view.frame.size.width, 88);
+	button.frame = CGRectMake(0, 40 + BUTTONHEIGHT + 10, self.view.frame.size.width, 88);
 	[button addTarget:self action:@selector(buyAll) forControlEvents:UIControlEventTouchUpInside];
 	
 	buttonLabel = [[UILabel alloc] initWithFrame:CGRectMake(MARGIN, 0,
@@ -227,14 +192,21 @@ static StoreViewController *m_sharedInstance = nil;
 - (void)viewWillAppear:(BOOL)animated
 {
 	[super viewWillAppear:animated];
-//	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Paid"]) {
-//		[self performSelectorInBackground:@selector(checkPaid) withObject:nil];
-//	}
+	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"Paid"]) {
+		[self performSelectorInBackground:@selector(checkPaid) withObject:nil];
+	}
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+	[super viewDidAppear:animated];
+	m_bookIdentifier = [@"com.grampe.HandyBook" stringByAppendingString:self.bookID];
+	NSSet *identifiers = [[NSSet alloc] initWithObjects:m_bookIdentifier, @"com.grampe.HandyBook.allBooks", nil];
+	m_IAPHelper = [[IAPHelper alloc] initWithProductIdentifiers:identifiers];
 	[self reload];
 	
 	m_bookLabel.text = self.bookName;
 	m_infoLabel.text = self.info;
-	m_complectLabel.text = self.complect;
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -246,7 +218,7 @@ static StoreViewController *m_sharedInstance = nil;
 
 - (void)checkPaid
 {
-	NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://grampe.ucoz.ru/paid.xml"]];
+	NSData *fileData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://grampe.p.ht/paid.xml"]];
 	if (fileData) {
 		NSXMLParser *parser = [[NSXMLParser alloc] initWithData:fileData];
 		[parser setDelegate:self];
@@ -308,21 +280,10 @@ static StoreViewController *m_sharedInstance = nil;
 	if (m_activityView.hidden) {
 		m_activityView.hidden = NO;
 		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.book"];
+		SKProduct *product = [self productWithIdentifier:m_bookIdentifier];
 		DLog(@"Buying %@...", product.productIdentifier);
-		[[GDZIAPHelper sharedInstance] buyProduct:product];
+		[m_IAPHelper buyProduct:product];
 	}
-}
-
-- (void)buyComplect
-{
-	if (m_activityView.hidden) {
-		m_activityView.hidden = NO;
-		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.complect"];
-		DLog(@"Buying %@...", product.productIdentifier);
-		[[GDZIAPHelper sharedInstance] buyProduct:product];
-	}	
 }
 
 - (void)buyAll
@@ -332,14 +293,14 @@ static StoreViewController *m_sharedInstance = nil;
 		[m_activityView startAnimating];
 		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.all"];
 		DLog(@"Buying %@...", product.productIdentifier);
-		[[GDZIAPHelper sharedInstance] buyProduct:product];
+		[m_IAPHelper buyProduct:product];
 	}
 }
 
 - (void)reload
 {
 	if (!m_activityView) {
-		m_activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+		m_activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
 		m_activityView.frame = CGRectMake(self.view.center.x - 30, self.view.center.y - 30, 60, 60);
 		[self.view addSubview:m_activityView];
 	}
@@ -350,16 +311,13 @@ static StoreViewController *m_sharedInstance = nil;
 		[m_products release];
 	}
     m_products = nil;
-    [[GDZIAPHelper sharedInstance] requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
+    [m_IAPHelper requestProductsWithCompletionHandler:^(BOOL success, NSArray *products) {
         if (success) {
             m_products = [products retain];
-			SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.book"];
+			SKProduct *product = [self productWithIdentifier:m_bookIdentifier];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_bookPrice.text = [m_priceFormatter stringFromNumber:product.price];
-			product = [self productWithIdentifier:@"com.grampe.HandyBook.complect"];
-			[m_priceFormatter setLocale:product.priceLocale];
-			m_complectPrice.text = [m_priceFormatter stringFromNumber:product.price];
-			product = [self productWithIdentifier:@"com.grampe.HandyBook.all"];
+			product = [self productWithIdentifier:@"com.grampe.HandyBook.allBooks"];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_allPrice.text = [m_priceFormatter stringFromNumber:product.price];
         }

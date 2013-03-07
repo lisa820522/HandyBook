@@ -17,7 +17,7 @@
 @implementation IAPHelper {
     SKProductsRequest * _productsRequest;
     RequestProductsCompletionHandler _completionHandler;
-    
+    NSMutableSet * _purchasedProductIdentifiers;
     NSSet * _productIdentifiers;
 }
 
@@ -29,6 +29,18 @@
         
         // Store product identifiers
         _productIdentifiers = productIdentifiers;
+        
+        // Check for previously purchased products
+        _purchasedProductIdentifiers = [[NSMutableSet alloc] init];
+        for (NSString * productIdentifier in _productIdentifiers) {
+            BOOL productPurchased = [[NSUserDefaults standardUserDefaults] boolForKey:productIdentifier];
+            if (productPurchased) {
+                [_purchasedProductIdentifiers addObject:productIdentifier];
+                NSLog(@"Previously purchased: %@", productIdentifier);
+            } else {
+                NSLog(@"Not purchased: %@", productIdentifier);
+            }
+        }
         
         // Add self as transaction observer
         [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
@@ -50,7 +62,7 @@
 
 - (BOOL)productPurchased:(NSString *)productIdentifier
 {
-    return NO;
+    return [_purchasedProductIdentifiers containsObject:productIdentifier];
 }
 
 - (void)buyProduct:(SKProduct *)product {
@@ -72,9 +84,9 @@
     NSArray * skProducts = response.products;
     for (SKProduct * skProduct in skProducts) {
         DLog(@"Found product: %@ %@ %0.2f",
-              skProduct.productIdentifier,
-              skProduct.localizedTitle,
-              skProduct.price.floatValue);
+			 skProduct.productIdentifier,
+			 skProduct.localizedTitle,
+			 skProduct.price.floatValue);
     }
     
     _completionHandler(YES, skProducts);
@@ -142,6 +154,9 @@
 
 - (void)provideContentForProductIdentifier:(NSString *)productIdentifier
 {
+	NSArray *prods = [productIdentifier componentsSeparatedByString:@"."];
+	[_purchasedProductIdentifiers addObject:[prods lastObject]];
+	[[NSUserDefaults standardUserDefaults] setBool:YES forKey:[prods lastObject]];
     [[NSNotificationCenter defaultCenter] postNotificationName:IAPHelperProductPurchasedNotification object:productIdentifier userInfo:nil];
     
 }

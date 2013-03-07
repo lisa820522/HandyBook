@@ -24,7 +24,7 @@
 #   define DLog(...)
 #endif
 
-#define SERVERURL @"http://grampe.ru/"
+#define SERVERURL @"http://grampe.p.ht/"
 #define CATALOGUPDATED @"CatalogUpdated"
 
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height

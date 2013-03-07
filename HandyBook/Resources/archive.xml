@@ -2,9 +2,46 @@
 <archive>
 	<version v="1"/>
 	<subject id="0" name="Английский язык">
-		<category id="0" name="Самоучители">
-			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000000"/>
-			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000001"/>
+		<category id="0" name="Грамматика">
+			<item id="0" name="222 правила современного англиийского языка" author="Масюченко И.П." info="2004, 448с." file="b000000"/>
+			<item id="1" name="Collins Cobuild English Grammar" author="Dave Willis" info="" file="b000001"/>
+			<item id="2" name="Grammarway 1 (по-русски) Практическое пособие по грамматике англиийского языка" author="Jenny Dooley" info="" file="b000002"/>
+			<item id="3" name="Grammarway 2 (по-русски) Практическое пособие по грамматике англиийского языка" author="Jenny Dooley" info="" file="b000003"/>
+			<item id="4" name="Modern English grammar. A Practical Course" author="Комаровская С.Д." info="2002, 400с." file="b000004"/>
+			<item id="5" name="Англиийскиий без грамматических ошибок" author="Дьяконов О.В." info="2012, 224с." file="b000005"/>
+			<item id="6" name="Грамматика англиийского языка" author="Бездольныий А.В." info="2008, 327с." file="b000006"/>
+			<item id="7" name="Грамматика современного англиийского языка" author="Верба Л.Г." info="2001, 368с." file="b000007"/>
+			<item id="8" name="Кто боится англиийскоий грамматики?" author="Цебаковскиий С.Я." info="" file="b000008"/>
+			<item id="9" name="Популярная грамматика англиийского языка" author="Некрасова Е.В." info="" file="b000009"/>
+			<item id="10" name="Синтаксис англиийского языка" author="Смирницкиий А. И." info="" file="b000010"/>
+			<item id="11" name="Это ясно и просто. Англиийская грамматика в схемах" author="Перель Э.С." info="2002, 112с." file="b000011"/>
+		</category>
+		<category id="1" name="Самоучители">
+			<item id="0" name="Англиийскиий без труда сегодня" author="Assimil" info="" file="b000100"/>
+			<item id="1" name="Business English" author="Андрюшкин А.П." info="2008, 332с." file="b000101"/>
+			<item id="2" name="Real American Frankly Speaking Говорим откровенно" author="" info="" file="b000102"/>
+			<item id="3" name="Street English. Для ленивых, для неусидчивых, для тех, кто не знает англиийского, для тех, кто думает, что знает." author="Голденков М.А." info="" file="b000103"/>
+			<item id="4" name="Англиийскиий язык в диалогах" author="Ермолаева М.Е." info="2006, 136с." file="b000104"/>
+			<item id="5" name="Англиийскиий язык для делового общения" author="Гертруда Гаудсвард" info="" file="b000105"/>
+			<item id="6" name="Говорим по-американски" author="Виталиий Левенталь" info="2004, 172с." file="b000106"/>
+			<item id="7" name="Деловые приемы и встречи на англиийском визиты, сотрудничество и профессиональные контакты" author="Серена Мердок-Стерн" info="" file="b000107"/>
+			<item id="8" name="Иностранныий язык без пыток и боли." author="Ван Ляо Ши" info="2012, 16с." file="b000108"/>
+			<item id="9" name="Интенсивныий курс американского разговорного языка" author="Гутман Э." info="1995, 328с." file="b000109"/>
+			<item id="10" name="Как это сказать по-англиийски?" author="Гивенталь И.А." info="" file="b000110"/>
+			<item id="11" name="Общение на англиийском телефон, факс, e-mail, деловая переписка." author="Серена Мердок-Стерн" info="" file="b000111"/>
+			<item id="12" name="Сам себе учитель англиийского" author="Оваденко О.Н." info="2010, 784с." file="b000112"/>
+			<item id="13" name="Самоучитель англиийского языка" author="Комаров А.Н." info="" file="b000113"/>
+			<item id="14" name="Самоучитель англиийского языка. Практический курс" author="Ханс. Г. Хофманн" info="" file="b000114"/>
+			<item id="15" name="Свободно говорю по-англиийски" author="Черниховская Н.О." info="2012, 320с." file="b000115"/>
+			<item id="16" name="Современныий американскиий в диалогах. Easy Talk." author="Кенита Сью" info="" file="b000116"/>
+		</category>
+		<category id="1" name="Справочники">
+			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>
+			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000101"/>
+		</category>
+		<category id="1" name="Учебники">
+			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>
+			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000101"/>
 		</category>
 		<category id="1" name="Фонетика">
 			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>

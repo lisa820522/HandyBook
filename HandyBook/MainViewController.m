@@ -25,9 +25,11 @@
 	imageName = [imageName stringByAppendingString:@".png"];
 	
 	UIImage *image = [UIImage imageNamed:imageName];
-	image = [UIImage imageWithCGImage:[image CGImage] scale:1 orientation:UIImageOrientationUp];
+	if (ISRETINA) {
+		image = [UIImage imageWithCGImage:[image CGImage] scale:2 orientation:UIImageOrientationUp];
+	}
 	[self.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
-	
+
 	self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 200)/ 2, 0, 200, 44)];
 	self.titleLabel.backgroundColor = [UIColor clearColor];
 	self.titleLabel.textAlignment = UITextAlignmentCenter;

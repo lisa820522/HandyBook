@@ -15,9 +15,7 @@
     static GDZIAPHelper * sharedInstance;
     dispatch_once(&once, ^{
         NSSet * productIdentifiers = [NSSet setWithObjects:
-                                      @"com.grampe.HandyBook.book",
-                                      @"com.grampe.HandyBook.complect",
-                                      @"com.grampe.HandyBook.all",
+                                      @"com.xatax.gdzBooks.allBooks",
                                       nil];
         sharedInstance = [[self alloc] initWithProductIdentifiers:productIdentifiers];
     });
