@@ -97,6 +97,7 @@
 
 - (void)back
 {
+	m_cacheProvider.delegate = nil;
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -138,13 +139,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {	
 	m_bookID = [[self.books objectAtIndex:[indexPath row]] objectForKey:@"file"];
-	NSString *classComplect = [@"c" stringByAppendingString:[[m_bookID substringFromIndex:1] substringToIndex:2]];
-	classComplect = [classComplect stringByAppendingString:@"0000"];
 	[[PdfViewController sharedInstance] setName:[[self.books objectAtIndex:[indexPath row]] objectForKey:@"name"]];
 	
 	if ([[NSUserDefaults standardUserDefaults] boolForKey:m_bookID] ||
-		[[NSUserDefaults standardUserDefaults] boolForKey:classComplect] ||
-		[[NSUserDefaults standardUserDefaults] boolForKey:@"cXXXXXX"]) {
+		[[NSUserDefaults standardUserDefaults] boolForKey:@"allBooks"]) {
 		[self openReader:m_bookID];
 	} else {
 		[[StoreViewController sharedInstance] setBookID:m_bookID];

@@ -200,7 +200,7 @@ static StoreViewController *m_sharedInstance = nil;
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
-	m_bookIdentifier = [@"com.grampe.HandyBook" stringByAppendingString:self.bookID];
+	m_bookIdentifier = [@"com.grampe.HandyBook." stringByAppendingString:self.bookID];
 	NSSet *identifiers = [[NSSet alloc] initWithObjects:m_bookIdentifier, @"com.grampe.HandyBook.allBooks", nil];
 	m_IAPHelper = [[IAPHelper alloc] initWithProductIdentifiers:identifiers];
 	[self reload];

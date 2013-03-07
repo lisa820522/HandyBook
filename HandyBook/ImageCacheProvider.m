@@ -71,7 +71,7 @@
 	NSURL *url = [NSURL URLWithString:[SERVERURL stringByAppendingFormat:@"%@.jpg", key]];
 	NSURLRequest *req = [NSURLRequest requestWithURL:url];
 	[NSURLConnection sendAsynchronousRequest:req queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error) {
-		if (![response.MIMEType isEqualToString:@"image/jpeg"]) {
+		if ([response.MIMEType isEqualToString:@"image/jpeg"]) {
 			NSString *fileName = [key stringByAppendingString:@".jpg"];
 			NSString *filePath = [m_docPath stringByAppendingPathComponent:fileName];
 			[data writeToFile:filePath atomically:YES];

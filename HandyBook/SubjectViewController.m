@@ -55,13 +55,14 @@
 	
 	m_lockView = [[UIView alloc] initWithFrame:self.view.bounds];
 	m_lockView.backgroundColor = [UIColor clearColor];
-	[self.navigationController.navigationBar addSubview:m_lockView];
 	m_activityView = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 44) / 2, (self.view.frame.size.height - 44) / 2, 44, 44)];
 	m_activityView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
 	[m_lockView addSubview:m_activityView];
 	m_lockView.hidden = YES;
 	
 	[self setNavigationBar];
+	
+	[self.navigationController.navigationBar addSubview:m_lockView];
 	
 	[self performSelectorInBackground:@selector(updateCatalog) withObject:nil];
 }
