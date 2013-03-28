@@ -11,7 +11,6 @@
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
 	#import <Foundation/Foundation.h>
-	#import "TestFlight.h"
 #endif
 
 #ifndef DEBUG
@@ -32,3 +31,5 @@
 #define IPADHEIGHT 1024
 #define IPHONEHEIGHT 480
 #define IPHONE5HEIGHT 568
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)

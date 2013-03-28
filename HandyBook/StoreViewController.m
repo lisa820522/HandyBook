@@ -200,8 +200,8 @@ static StoreViewController *m_sharedInstance = nil;
 - (void)viewDidAppear:(BOOL)animated
 {
 	[super viewDidAppear:animated];
-	m_bookIdentifier = [@"com.grampe.HandyBook." stringByAppendingString:self.bookID];
-	NSSet *identifiers = [[NSSet alloc] initWithObjects:m_bookIdentifier, @"com.grampe.HandyBook.allBooks", nil];
+	m_bookIdentifier = [@"com.geliskhanov.HandyBook." stringByAppendingString:self.bookID];
+	NSSet *identifiers = [[NSSet alloc] initWithObjects:m_bookIdentifier, @"com.geliskhanov.HandyBook.allBooks", nil];
 	m_IAPHelper = [[IAPHelper alloc] initWithProductIdentifiers:identifiers];
 	[self reload];
 	
@@ -243,7 +243,7 @@ static StoreViewController *m_sharedInstance = nil;
 	attributes:(NSDictionary *)attributeDict
 {
 	if ([elementName isEqualToString:@"app"]) {
-		if ([[attributeDict objectForKey:@"id"] isEqualToString:@"com.grampe.HandyBook"]) {
+		if ([[attributeDict objectForKey:@"id"] isEqualToString:@"com.geliskhanov.HandyBook"]) {
 			if ([[attributeDict objectForKey:@"status"] isEqualToString:@"1"]) {
 				[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"Paid"];
 			}
@@ -291,7 +291,7 @@ static StoreViewController *m_sharedInstance = nil;
 	if (m_activityView.hidden) {
 		m_activityView.hidden = NO;
 		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.grampe.HandyBook.all"];
+		SKProduct *product = [self productWithIdentifier:@"com.geliskhanov.HandyBook.all"];
 		DLog(@"Buying %@...", product.productIdentifier);
 		[m_IAPHelper buyProduct:product];
 	}
@@ -317,7 +317,7 @@ static StoreViewController *m_sharedInstance = nil;
 			SKProduct *product = [self productWithIdentifier:m_bookIdentifier];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_bookPrice.text = [m_priceFormatter stringFromNumber:product.price];
-			product = [self productWithIdentifier:@"com.grampe.HandyBook.allBooks"];
+			product = [self productWithIdentifier:@"com.geliskhanov.HandyBook.allBooks"];
 			[m_priceFormatter setLocale:product.priceLocale];
 			m_allPrice.text = [m_priceFormatter stringFromNumber:product.price];
         }

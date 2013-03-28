@@ -161,6 +161,7 @@
 	NSString *fileName = [documentsDirectory stringByAppendingPathComponent:[key stringByAppendingString:@".pdf"]];
 	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:fileName];
 	if (fileExists) {
+		[[PdfViewController sharedInstance] reloadDocument];
 		[self.navigationController pushViewController:[PdfViewController sharedInstance] animated:YES];
 	} else {
 		[self showDownloader];
