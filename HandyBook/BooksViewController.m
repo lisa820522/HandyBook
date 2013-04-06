@@ -202,7 +202,13 @@
 }
 - (void)didReceiveDataWithSize:(float)size
 {
-	[m_alert setDownloadedSize:[m_alert downloadedSize] + size];
+	[self performSelectorOnMainThread:@selector(alertSetSize:) withObject:[NSNumber numberWithDouble:size] waitUntilDone:YES];
+}
+
+- (void)alertSetSize:(NSNumber *)size
+{
+	double currentSize = [m_alert downloadedSize];
+	[m_alert setDownloadedSize:currentSize + [size doubleValue]];
 }
 
 - (void)didFinishedWithData:(NSData *)data

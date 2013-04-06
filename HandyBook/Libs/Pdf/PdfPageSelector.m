@@ -27,7 +27,7 @@
 		m_visibleThumbnailsIndexes = [[NSMutableArray alloc] init];
 		m_thumbnailsCoordinates = [[NSMutableArray alloc] init];
 		m_selectedPageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-		m_selectedPageView.backgroundColor = [UIColor whiteColor];
+		m_selectedPageView.backgroundColor = [UIColor blackColor];
 		m_selectedPageView.layer.borderColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1].CGColor;
 		m_selectedPageView.layer.borderWidth = 1;
 		[self addSubview:m_selectedPageView];

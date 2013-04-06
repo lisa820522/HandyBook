@@ -112,14 +112,14 @@
 - (NSString *)__messageForDoneBytes:(double)doneBytes totalBytes:(double)totalBytes
 {
     NSString *beginingOfMessage = nil;
-
+	
 	beginingOfMessage = @"Загружено";
 	
     if (m_totalSize == 0) {
         return beginingOfMessage;
     }
     
-    NSMutableString *message = [NSMutableString stringWithCapacity:128];
+    NSMutableString *message = [[NSMutableString alloc] init];
     [message appendFormat:@"%@: ", beginingOfMessage];
     if (totalBytes < 1024 * 1024) {
         [message appendFormat:@"%0.1f KB", (doneBytes / 1024)];
@@ -128,7 +128,8 @@
     }
     int percent = round(doneBytes / totalBytes * 100);
     [message appendFormat:@" (%d%%)", percent];
-    return message;
+	
+    return [message autorelease];
 }
 
 

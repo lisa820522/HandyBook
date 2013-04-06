@@ -165,7 +165,7 @@
 	}
 	Bookmark *bookmark = [m_delegate bookmarkAtIndex:indexPath.row];
 	cell.textLabel.text = bookmark.name;
-	cell.textLabel.textColor = [UIColor whiteColor];
+	cell.textLabel.textColor = [UIColor blackColor];
 	cell.textLabel.font = [UIFont fontWithName:@"StudioScriptCTT" size:25.0];
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
     return cell;

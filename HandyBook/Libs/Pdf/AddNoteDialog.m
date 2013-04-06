@@ -33,11 +33,11 @@
 - (void)loadView
 {
 	[super loadView];
-	self.view.backgroundColor = [UIColor whiteColor];
+	self.view.backgroundColor = [UIColor blackColor];
 	
 	m_textView = [[UITextView alloc] initWithFrame:CGRectZero];
 	m_textView.font = [UIFont fontWithName:@"Helvetica-Bold" size:25];
-	m_textView.textColor = [UIColor whiteColor];
+	m_textView.textColor = [UIColor blackColor];
 	[self.view addSubview:m_textView];
 	
 	self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"Отмена", nil)

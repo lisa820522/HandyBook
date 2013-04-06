@@ -167,7 +167,7 @@
 	Note *note = [m_delegate noteByIndex:indexPath.row];
 	
 	cell.textLabel.text = note.text;
-	cell.textLabel.textColor = [UIColor whiteColor];
+	cell.textLabel.textColor = [UIColor blackColor];
 	cell.textLabel.font = [UIFont fontWithName:@"StudioScriptCTT" size:25.0];
 	cell.selectionStyle = UITableViewCellSelectionStyleGray;
 	

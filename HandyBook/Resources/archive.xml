@@ -31,31 +31,171 @@
 			<item id="11" name="Общение на англиийском телефон, факс, e-mail, деловая переписка." author="Серена Мердок-Стерн" info="" file="b000111"/>
 			<item id="12" name="Сам себе учитель англиийского" author="Оваденко О.Н." info="2010, 784с." file="b000112"/>
 			<item id="13" name="Самоучитель англиийского языка" author="Комаров А.Н." info="" file="b000113"/>
-			<item id="14" name="Самоучитель англиийского языка. Практический курс" author="Ханс. Г. Хофманн" info="" file="b000114"/>
+			<item id="14" name="Самоучитель англиийского языка. Практическиий курс" author="Ханс. Г. Хофманн" info="" file="b000114"/>
 			<item id="15" name="Свободно говорю по-англиийски" author="Черниховская Н.О." info="2012, 320с." file="b000115"/>
 			<item id="16" name="Современныий американскиий в диалогах. Easy Talk." author="Кенита Сью" info="" file="b000116"/>
 		</category>
-		<category id="1" name="Справочники">
-			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>
-			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000101"/>
+		<category id="2" name="Справочники">
+			<item id="0" name="Америка через американизмы" author="Томахин Г.Д." info="1982, 256с." file="b000200"/>
+			<item id="1" name="Американскиий вариант англиийского языка" author="Третьяков Ю.П." info="2005, 330с." file="b000201"/>
+			<item id="2" name="Англиийская грамматика в таблицах" author="Арцинович Н.К." info="2005, 112с." file="b000202"/>
+			<item id="3" name="Англиийские фразовые глаголы в примерах и упражнениях" author="Точилина А.К." info="2011, 208с." file="b000203"/>
+			<item id="4" name="Англиийскиий язык в алгоритмах" author="Фомина И.Н." info="2007, 430с." file="b000204"/>
+			<item id="5" name="Иллюстрированныий словарь американского сленга" author="Московцев Н." info="2004, 480с." file="b000205"/>
+			<item id="6" name="Идиоматическиий перевод с русского языка на англиийский" author="Кузьмин С.С." info="" file="b000206"/>
+			<item id="7" name="Как удивиться и возмутиться по-англиийски" author="Гивенталь И.А." info="2007, 248с." file="b000207"/>
+			<item id="8" name="Как читать по-англиийски математические, химические и др. символы, формулы и сокращения" author="Савинова Е.С." info="" file="b000208"/>
+			<item id="9" name="Краткиий справочник по грамматике англиийского языка" author="Кушникова Г.К." info="" file="b000209"/>
+			<item id="10" name="Русские проблемы в англиийскоий речи. Слова и фразы в контексте двух культур" author="Линн Виссон" info="" file="b000210"/>
+			<item id="11" name="Современныий англиийскиий. Новеийшиий справочник по грамматике" author="Веийхман Г.А." info="2010, 320с." file="b000211"/>
+			<item id="12" name="Стандартные фразы повседневного общения. Русско-англиийские соответствия" author="Разинкина Н.М." info="" file="b000212"/>
 		</category>
-		<category id="1" name="Учебники">
-			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>
-			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000101"/>
+		<category id="3" name="Учебники">
+			<item id="0" name="Easy English" author="" info="" file="b000300"/>
+			<item id="1" name="Англиийскиий шаг за шагом т. 1" author="Н.А. Бонк" info="" file="b000301"/>
+			<item id="2" name="Англиийскиий шаг за шагом т. 2" author="Н.А. Бонк" info="" file="b000302"/>
+			<item id="3" name="Англиийскиий язык для экономистов" author="Агабекян И.П." info="" file="b000303"/>
+			<item id="4" name="Курс англиийского языка для студентов языковых вузов" author="Ястребова Е.Б." info="2003, 640с." file="b000304"/>
+			<item id="5" name="Полныий курс англиийского языка. Учебник-самоучитель" author="Рубцова М.Г." info="2004, 544с." file="b000305"/>
+			<item id="6" name="Учебник англиийского языка для студентов технических университетов и вузов" author="Орловская И.В. " info="" file="b000306"/>
+			<item id="7" name="Учебник англиийского языка ч. 1" author="Бонк Н.А." info="2001, 637с." file="b000307"/>
+			<item id="8" name="Учебник англиийского языка ч. 2" author="Бонк Н.А." info="2001, 511с." file="b000308"/>
 		</category>
-		<category id="1" name="Фонетика">
-			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b000100"/>
-			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b000101"/>
+		<category id="4" name="Фонетика">
+			<item id="0" name="Англиийскиий без акцента" author="Шпаковскиий В.Ф." info="2009, 124с." file="b000400"/>
+			<item id="1" name="Основы фонетики англиийского языка" author="Бондаренко Л.П." info="2009, 152с." file="b000401"/>
+			<item id="2" name="Фонетика англиийского языка." author="Хромов С.С." info="2012, 56с." file="b000402"/>
 		</category>
 	</subject>
-	<subject id="1" name="Французский язык">
-		<category id="0" name="Самоучители">
-			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b010000"/>
-			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b010001"/>
+	<subject id="1" name="Астрономия">
+		<category id="0" name="Книги по астрономии">
+			<item id="0" name="Астрономия и космос. Энциклопедия" author="Майлс Л." info="2002, 96с." file="b010000"/>
+			<item id="1" name="Астрономия" author="Клищенко А.П." info="2004, 224с." file="b010001"/>
+			<item id="2" name="Занимательные вопросы по астрономии и не только" author="Романов А.М." info="2005, 415с." file="b010002"/>
+			<item id="3" name="Звезды и планеты. Атлас звездного неба" author="Ридпат Я." info="2004, 400с." file="b010003"/>
+			<item id="4" name="Календарь и хронология" author="Климишин И.А." info="1985, 320с." file="b010004"/>
+			<item id="5" name="Космонавтика" author="Тарасов Е.В." info="1977, 216с." file="b010005"/>
+			<item id="6" name="Космос" author="Рандзини Д." info="2002, 320с." file="b010006"/>
+			<item id="7" name="Наблюдаем Солнце" author="Степанян Н.Н." info="1992, 128с." file="b010007"/>
+			<item id="8" name="Наблюдение галактик, туманностеий и звездных скоплениий" author="Лабузов А.С." info="1993, 240с." file="b010008"/>
+			<item id="9" name="Наблюдения звездного неба в бинокль и подзорную трубу" author="Э. Важоров" info="2007, 138с." file="b010009"/>
+			<item id="10" name="Неистовая Вселенная" author="Хван М.П." info="2006, 408с." file="b010010"/>
+			<item id="11" name="Расширяя границы Вселенноий" author="Гусев Е.Б." info="2003, 176с." file="b010011"/>
+			<item id="12" name="Сокровища звёздного неба. Путеводитель по созвездиям и Луне" author="Зигель Ф.Ю." info="1980, 312с." file="b010012"/>
 		</category>
-		<category id="1" name="Фонетика">
-			<item id="0" name="Книга 0" author="Автор" info="Инфо" file="b010100"/>
-			<item id="1" name="Книга 1" author="Автор" info="Инфо" file="b010101"/>
+	</subject>
+	<subject id="3" name="География">
+		<category id="0" name="6 класс">
+			<item id="0" name="" author="" info="" file="b030000"/>
+			<item id="1" name="" author="" info="" file="b030001"/>
+			<item id="2" name="" author="" info="" file="b030002"/>
+			<item id="3" name="" author="" info="" file="b030003"/>
+			<item id="4" name="" author="" info="" file="b030004"/>
+			<item id="5" name="" author="" info="" file="b030005"/>
+		</category>
+		<category id="1" name="7 класс">
+			<item id="0" name="" author="" info="" file="b030100"/>
+			<item id="1" name="" author="" info="" file="b030101"/>
+			<item id="2" name="" author="" info="" file="b030102"/>
+			<item id="3" name="" author="" info="" file="b030103"/>
+			<item id="4" name="" author="" info="" file="b030104"/>
+		</category>
+		<category id="2" name="8 класс">
+			<item id="0" name="" author="" info="" file="b030200"/>
+			<item id="1" name="" author="" info="" file="b030201"/>
+			<item id="2" name="" author="" info="" file="b030202"/>
+			<item id="3" name="" author="" info="" file="b030203"/>
+			<item id="4" name="" author="" info="" file="b030204"/>
+			<item id="5" name="" author="" info="" file="b030205"/>
+		</category>
+		<category id="3" name="9 класс">
+			<item id="0" name="" author="" info="" file="b030300"/>
+			<item id="1" name="" author="" info="" file="b030301"/>
+			<item id="2" name="" author="" info="" file="b030302"/>
+			<item id="3" name="" author="" info="" file="b030303"/>
+			<item id="4" name="" author="" info="" file="b030304"/>
+			<item id="5" name="" author="" info="" file="b030305"/>
+			<item id="6" name="" author="" info="" file="b030306"/>
+			<item id="7" name="" author="" info="" file="b030307"/>
+		</category>
+		<category id="4" name="10 класс">
+			<item id="0" name="" author="" info="" file="b030400"/>
+			<item id="1" name="" author="" info="" file="b030401"/>
+			<item id="2" name="" author="" info="" file="b030402"/>
+			<item id="3" name="" author="" info="" file="b030403"/>
+			<item id="4" name="" author="" info="" file="b030404"/>
+			<item id="5" name="" author="" info="" file="b030405"/>
+			<item id="6" name="" author="" info="" file="b030406"/>
+			<item id="7" name="" author="" info="" file="b030407"/>
+			<item id="8" name="" author="" info="" file="b030408"/>
+			<item id="9" name="" author="" info="" file="b030409"/>
+		</category>
+		<category id="5" name="11 класс">
+			<item id="0" name="" author="" info="" file="b030500"/>
+		</category>
+	</subject>
+	<subject id="4" name="Естествознание">
+		<category id="0" name="Учебники">
+			<item id="0" name="" author="" info="" file="b040000"/>
+			<item id="1" name="" author="" info="" file="b040001"/>
+			<item id="2" name="" author="" info="" file="b040002"/>
+			<item id="3" name="" author="" info="" file="b040003"/>
+		</category>
+	</subject>
+	<subject id="7" name="Немецкий язык">
+		<category id="0" name="Учебники">
+			<item id="0" name="" author="" info="" file="b070000"/>
+			<item id="1" name="" author="" info="" file="b070001"/>
+			<item id="2" name="" author="" info="" file="b070002"/>
+			<item id="3" name="" author="" info="" file="b070003"/>
+			<item id="4" name="" author="" info="" file="b070004"/>
+			<item id="5" name="" author="" info="" file="b070005"/>
+			<item id="6" name="" author="" info="" file="b070006"/>
+		</category>
+		<category id="1" name="Справочники, словари">
+			<item id="0" name="" author="" info="" file="b070100"/>
+			<item id="1" name="" author="" info="" file="b070101"/>
+			<item id="2" name="" author="" info="" file="b070102"/>
+			<item id="3" name="" author="" info="" file="b070103"/>
+			<item id="4" name="" author="" info="" file="b070104"/>
+			<item id="5" name="" author="" info="" file="b070105"/>
+			<item id="6" name="" author="" info="" file="b070106"/>
+			<item id="7" name="" author="" info="" file="b070107"/>
+			<item id="8" name="" author="" info="" file="b070108"/>
+			<item id="9" name="" author="" info="" file="b0701029"/>
+			<item id="10" name="" author="" info="" file="b070110"/>
+			<item id="11" name="" author="" info="" file="b070111"/>
+			<item id="12" name="" author="" info="" file="b070112"/>
+		</category>
+	</subject>
+	<subject id="8" name="Физическая культура">
+		<category id="0" name="Учебники">
+			<item id="0" name="Физическая культура. 1-4 классы" author="Лях В.И." info="2013, 190с." file="b080000"/>
+			<item id="1" name="Физическая культура. 8-9 классы" author="Лях В.И." info="2012, 207с." file="b080001"/>
+			<item id="2" name="Физическая культура. 10-11 классы" author="Лях В.И." info="2012, 237с." file="b080002"/>
+		</category>
+	</subject>
+	<subject id="9" name="Французский язык">
+		<category id="0" name="Словари, справочники">
+			<item id="0" name="1500 необходимых французских слов" author="" info="2007, 64с." file="b090000"/>
+			<item id="1" name="Предлоги французского языка и их употребление" author="Аксенова О.А." info="2008, 84с." file="b090001"/>
+			<item id="2" name="Разговорныий французскиий язык (русско-французскиий разговорник)" author="" info="2004, 255с." file="b090002"/>
+			<item id="3" name="Речевоий этикет. Русско-французские соответствия" author="Формановская Н.И." info="1989, 112с." file="b090003"/>
+			<item id="4" name="Русско-французскиий разговорник с путеводителем" author="Мария Кудрявцева" info="2004, 194с." file="b090004"/>
+			<item id="5" name="Фонетика французского языка" author="Щерба Л.В." info="1963, 308с." file="b090005"/>
+			<item id="6" name="Французская грамматика - кратко и просто" author="Дотель К." info="2008, 191с." file="b090006"/>
+			<item id="7" name="Французскиий язык. Таблицы глагольных форм" author="Робертсон А.Л." info="2003, 255с." file="b090007"/>
+			<item id="8" name="Школьныий французско-русскиий и русско-французскиий словарь" author="" info="2001, 352с." file="b090008"/>
+			<item id="9" name="Экстренныий французскиий (русско-французскиий разговорник)" author="К. Артур" info="2006, 79с." file="b090009"/>
+		</category>
+		<category id="1" name="Учебники">
+			<item id="0" name="Интенсивныий курс французского языка" author="Г. Може" info="2002, 309с." file="b090100"/>
+			<item id="1" name="Краткая грамматика французского языка" author="Софи Вьеийар" info="2004, 110с." file="b090101"/>
+			<item id="2" name="Начинаем изучать французскиий" author="Стеийн Г" info="2008, 425с." file="b090102"/>
+			<item id="3" name="Самоучитель французского языка" author="Парчевскиий К.К." info="1965, 411с." file="b090103"/>
+			<item id="4" name="Французскиий язык для всех" author="Папко М.Л." info="2000, 304с." file="b090104"/>
+			<item id="5" name="Французскиий язык за 24 часа" author="Тукаева И.А." info="2009, 284с." file="b090105"/>
+			<item id="6" name="Французскиий язык. 9 класс. Синяя птица" author="Селиванова Н.А." info="2012, 207с." file="b090106"/>
 		</category>
 	</subject>
 </archive>

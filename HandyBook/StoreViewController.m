@@ -291,7 +291,7 @@ static StoreViewController *m_sharedInstance = nil;
 	if (m_activityView.hidden) {
 		m_activityView.hidden = NO;
 		[m_activityView startAnimating];
-		SKProduct *product = [self productWithIdentifier:@"com.geliskhanov.HandyBook.all"];
+		SKProduct *product = [self productWithIdentifier:@"com.geliskhanov.HandyBook.allBooks"];
 		DLog(@"Buying %@...", product.productIdentifier);
 		[m_IAPHelper buyProduct:product];
 	}
