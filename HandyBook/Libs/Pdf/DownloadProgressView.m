@@ -91,7 +91,7 @@
 - (NSString *)__messageForDoneBytes:(double)doneBytes totalBytes:(double)totalBytes
 {
     NSString *beginingOfMessage = nil;
-	
+
 	beginingOfMessage = NSLocalizedString(@"Загружено", nil);
 	
     if (m_totalSize == 0) {

@@ -59,7 +59,11 @@
 {
 	m_book = book;
 	m_nameLabel.text = [book objectForKey:@"name"];
-	m_authorLabel.text = [[book objectForKey:@"author"] stringByAppendingFormat:@", %@", [book objectForKey:@"info"]];
+	m_authorLabel.text = [book objectForKey:@"author"];
+	if (m_authorLabel.text.length > 0 && [(NSString *)[book objectForKey:@"info"] length] > 0) {
+		m_authorLabel.text = [m_authorLabel.text stringByAppendingString:@", "];
+	}
+	m_authorLabel.text = [m_authorLabel.text stringByAppendingString:[book objectForKey:@"info"]];
 //	UIImage *img = [UIImage imageNamed:[[book objectForKey:@"file"] stringByAppendingString:@".jpg"]];
 //	m_thumbnailView.image = img;
 }

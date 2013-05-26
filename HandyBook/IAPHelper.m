@@ -18,7 +18,7 @@
     SKProductsRequest * _productsRequest;
     RequestProductsCompletionHandler _completionHandler;
     NSMutableSet * _purchasedProductIdentifiers;
-    NSSet * _productIdentifiers;
+    NSMutableSet * _productIdentifiers;
 }
 
 @synthesize completionHandler = _completionHandler;
@@ -28,7 +28,7 @@
     if ((self = [super init])) {
         
         // Store product identifiers
-        _productIdentifiers = productIdentifiers;
+        _productIdentifiers = [[NSMutableSet alloc] initWithSet:productIdentifiers];
         
         // Check for previously purchased products
         _purchasedProductIdentifiers = [[NSMutableSet alloc] init];
@@ -48,6 +48,11 @@
     }
     return self;
     
+}
+
+- (void)addProductIdentifiers:(NSArray *)arr
+{
+	[_productIdentifiers addObjectsFromArray:arr];
 }
 
 - (void)requestProductsWithCompletionHandler:(RequestProductsCompletionHandler)completionHandler {
@@ -84,9 +89,9 @@
     NSArray * skProducts = response.products;
     for (SKProduct * skProduct in skProducts) {
         DLog(@"Found product: %@ %@ %0.2f",
-			 skProduct.productIdentifier,
-			 skProduct.localizedTitle,
-			 skProduct.price.floatValue);
+              skProduct.productIdentifier,
+              skProduct.localizedTitle,
+              skProduct.price.floatValue);
     }
     
     _completionHandler(YES, skProducts);

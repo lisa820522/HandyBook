@@ -23,7 +23,8 @@
 #   define DLog(...)
 #endif
 
-#define SERVERURL @"http://handybook.p.ht/"
+//#define SERVERURL @"http://handybook.p.ht/"
+#define SERVERURL @"http://192.168.0.104/"
 #define CATALOGUPDATED @"CatalogUpdated"
 
 #define SCREENHEIGHT [UIScreen mainScreen].bounds.size.height

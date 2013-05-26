@@ -13,7 +13,6 @@
 #import "PdfViewController.h"
 #import "StoreViewController.h"
 #import "PdfDownloader.h"
-#import "DownloadProgressView.h"
 #import "BookCell.h"
 
 @implementation BooksViewController
@@ -170,50 +169,56 @@
 
 - (void)showDownloader
 {
-	m_alert = [[DownloadProgressView alloc] initWithDelegate:self];
+	if (!m_progressView) {
+		m_progressView = [[DownloadProgressView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 280)/2, (self.view.frame.size.height - 200)/2, 280, 200)];
+		m_progressView.delegate = self;
+		[self.view addSubview:m_progressView];
+		[m_progressView hide];
+	}
+	[m_progressView show];
+	
+	[PdfDownloader sharedInstance].delegate = self;
+	[[PdfDownloader sharedInstance] performSelectorInBackground:@selector(downloadFile:) withObject:[m_bookID stringByAppendingString:@".pdf"]];
+	
+/*	m_alert = [[DownloadProgressView alloc] initWithDelegate:self];
 	[PdfDownloader sharedInstance].delegate = self;
 	[[PdfDownloader sharedInstance] downloadFile:[m_bookID stringByAppendingString:@".pdf"]];
-	[m_alert show];
+	[m_alert show];*/
 }
 
 #pragma mark - UIAlertViewDelegate
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-	if (alertView == m_alert) {
-		[[PdfDownloader sharedInstance] cancelDownloading];
-		[m_alert release];
-	} else {
-		[alertView release];
-	}
-	
+
+}
+
+- (void)cancelDownload
+{
+	[[PdfDownloader sharedInstance] cancelDownloading];
+	[m_progressView hide];
 }
 
 #pragma mark - PdfDownloaderDelegate
 
 - (void)downloadingFailed
 {
-	[m_alert dismissWithClickedButtonIndex:0 animated:YES];
+	[m_progressView hide];
 }
 
 - (void)didReceiveDataSize:(float)size
 {
-	[m_alert setTotalSize:size];
+	[m_progressView setTotalSize:size];
 }
 - (void)didReceiveDataWithSize:(float)size
 {
-	[self performSelectorOnMainThread:@selector(alertSetSize:) withObject:[NSNumber numberWithDouble:size] waitUntilDone:YES];
-}
-
-- (void)alertSetSize:(NSNumber *)size
-{
-	double currentSize = [m_alert downloadedSize];
-	[m_alert setDownloadedSize:currentSize + [size doubleValue]];
+	float downloadedSize = m_progressView.downloadedSize + size;
+	[m_progressView setDownloadedSize:downloadedSize];
 }
 
 - (void)didFinishedWithData:(NSData *)data
 {
-	[m_alert dismissWithClickedButtonIndex:0 animated:YES];
+	[m_progressView hide];
 	NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 	NSString *fileName = [documentsDirectory stringByAppendingPathComponent:[m_bookID stringByAppendingString:@".pdf"]];
 	// Hack against fake data

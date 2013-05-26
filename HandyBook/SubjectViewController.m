@@ -167,7 +167,7 @@
 		NSData *data = [NSData dataWithContentsOfURL:url];
 		NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
 		NSString *fileName = [documentsDirectory stringByAppendingPathComponent:@"archive.xml"];
-		if (data.length > 10000) {
+		if (data.length > 1000) {
 			[data writeToFile:fileName atomically:YES];
 		}
 		[[NSNotificationCenter defaultCenter] postNotificationName:CATALOGUPDATED object:nil];

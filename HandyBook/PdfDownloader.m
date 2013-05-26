@@ -10,7 +10,7 @@
 
 @implementation PdfDownloader
 
-@synthesize delegate;
+@synthesize delegate = m_delegate;
 
 static PdfDownloader *m_sharedInstance = nil;
 
@@ -43,11 +43,28 @@ static PdfDownloader *m_sharedInstance = nil;
 
 - (void)downloadFile:(NSString *)fileName
 {
-	NSString *urlString = [SERVERURL stringByAppendingString:fileName];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:urlString]];
-	m_connection = [[NSURLConnection alloc] initWithRequest:request delegate:self startImmediately:YES];
+	if (m_currentData) {
+		[m_currentData release];
+		m_currentData = nil;
+	}
+	if (m_url) {
+		[m_url release];
+		m_url = nil;
+	}
+	if (m_request) {
+		[m_request release];
+		m_request = nil;
+	}
+	NSString *urlString =  [SERVERURL stringByAppendingString:fileName];
+	
+	DLog(@"%@", urlString);
+	
+	m_url = [[NSURL alloc] initWithString:urlString];
+	m_request = [[NSURLRequest alloc] initWithURL:m_url];
+	m_connection = [[NSURLConnection alloc] initWithRequest:m_request delegate:self startImmediately:YES];
+	CFRunLoopRun();
 	if (m_connection == nil) {
-		[self.delegate downloadingFailed];
+		[m_delegate downloadingFailed];
 	}
 }
 
@@ -58,23 +75,36 @@ static PdfDownloader *m_sharedInstance = nil;
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
-	if (m_currentData) {
-		[m_currentData release];
+	DLog(@"%ll", response.expectedContentLength);
+	if ([response.MIMEType isEqualToString:@"application/pdf"]) {
+		m_currentData = [[NSMutableData alloc] init];
+		self.totalDataLength = response.expectedContentLength;
+		[m_delegate didReceiveDataSize:self.totalDataLength];
+	} else {
+		[m_delegate downloadingFailed];
+		[connection cancel];
+		CFRunLoopStop(CFRunLoopGetCurrent());
 	}
-	m_currentData = [[NSMutableData alloc] init];
-	self.totalDataLength = response.expectedContentLength;
-	[self.delegate didReceiveDataSize:self.totalDataLength];
+	
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	[m_currentData appendData:data];
-	[self.delegate didReceiveDataWithSize:[data length]];
+	float size = [data length];
+	[m_delegate didReceiveDataWithSize:size];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection
 {
-	[self.delegate didFinishedWithData:(NSData *)m_currentData];
+	[m_delegate didFinishedWithData:(NSData *)m_currentData];
+	CFRunLoopStop(CFRunLoopGetCurrent());
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+	[m_delegate downloadingFailed];
+	CFRunLoopStop(CFRunLoopGetCurrent());
 }
 
 @end

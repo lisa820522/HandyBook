@@ -11,10 +11,12 @@
 #import "PdfDownloader.h"
 #import "ImageCacheProvider.h"
 
-@class DownloadProgressView;
+#import "DownloadProgressView.h"
 
-@interface BooksViewController : UITableViewController <UIAlertViewDelegate, PdfDownloaderDelegate, ImageCacheDelegate> {
-	DownloadProgressView *m_alert;
+@interface BooksViewController : UITableViewController <UIAlertViewDelegate, PdfDownloaderDelegate, ImageCacheDelegate,
+DownloadProgressViewDelegate> {
+	
+	DownloadProgressView *m_progressView;
 	NSString *m_bookID;
 	ImageCacheProvider *m_cacheProvider;
 }

@@ -20,6 +20,9 @@
 @interface PdfDownloader : NSObject <NSURLConnectionDataDelegate> {
 	NSMutableData *m_currentData;
 	NSURLConnection *m_connection;
+	NSURLRequest *m_request;
+	NSURL *m_url;
+	id<PdfDownloaderDelegate> m_delegate;
 }
 
 @property (nonatomic, assign) id<PdfDownloaderDelegate> delegate;
